@@ -1,20 +1,22 @@
 "------------------------------------------------------------------------------
 "  Description: Rainbow colors for parenthsis
-"          $Id: rainbow_parenthsis.vim 764 2007-09-10 17:55:12Z krischik $
+"          $Id: rainbow_parenthsis.vim 29 2007-09-24 11:40:36Z krischik@users.sourceforge.net $
 "    Copyright: Copyright (C) 2006 Martin Krischik
 "   Maintainer: Martin Krischik
 "               John Gilmore
-"      $Author: krischik $
-"        $Date: 2007-09-10 19:55:12 +0200 (Mo, 10 Sep 2007) $
-"      Version: 3.0
-"    $Revision: 764 $
-"     $HeadURL: http://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/plugin/rainbow_parenthsis.vim $
+"      $Author: krischik@users.sourceforge.net $
+"        $Date: 2007-09-24 13:40:36 +0200 (Mo, 24 Sep 2007) $
+"      Version: 4.0
+"    $Revision: 29 $
+"     $HeadURL: https://vim-scripts.googlecode.com/svn/trunk/1561%20Rainbow%20Parenthsis%20Bundle/plugin/rainbow_parenthsis.vim $
 "      History: 24.05.2006 MK Unified Headers
 "               15.10.2006 MK Bram's suggestion for runtime integration
 "               06.09.2007 LH Buffer friendly (can be used in different buffers),
 "                             can be toggled
 "               09.09.2007 MK Use on LH's suggestion but use autoload to
 "                             impove memory consumtion and startup performance
+"               09.10.2007 MK Now with round, square brackets, curly and angle
+"                             brackets.
 "        Usage: copy to plugin directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
