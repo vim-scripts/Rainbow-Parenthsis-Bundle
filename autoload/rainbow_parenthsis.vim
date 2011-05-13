@@ -62,6 +62,7 @@ endfunction
 function rainbow_parenthsis#Toggle ()
     if ! exists('rainbow_parenthesis#active')
         call rainbow_parenthsis#LoadRound ()
+        let rainbow_parenthesis#active = 0
     endif
     if rainbow_parenthesis#active != 0
         call rainbow_parenthsis#Clear ()
