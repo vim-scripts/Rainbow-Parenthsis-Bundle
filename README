@@ -1,3 +1,6 @@
+This fork provides for a small fix to the plugin. It also customizes the parentheses colors
+for a dark background.
+
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=1561
 
 Based on the original rainbow_parenthsis from john gilmore but enhanced for gui mode.
