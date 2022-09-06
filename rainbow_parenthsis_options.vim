@@ -1,13 +1,8 @@
 "------------------------------------------------------------------------------
 "  Description: Options setable by the rainbow_parenthsis plugin
-"	   $Id: rainbow_parenthsis_options.vim 29 2007-09-24 11:40:36Z krischik@users.sourceforge.net $
-"    Copyright: Copyright (C) 2006 Martin Krischik
+"    Copyright: Copyright (C) 2006 … 2022 Martin Krischik
 "   Maintainer:	Martin Krischik (krischik@users.sourceforge.net)
-"      $Author: krischik@users.sourceforge.net $
-"	 $Date: 2007-09-24 13:40:36 +0200 (Mo, 24 Sep 2007) $
 "      Version: 4.0
-"    $Revision: 29 $
-"     $HeadURL: https://vim-scripts.googlecode.com/svn/trunk/1561%20Rainbow%20Parenthsis%20Bundle/rainbow_parenthsis_options.vim $
 "      History:	17.11.2006 MK rainbow_parenthsis_Options
 "		01.01.2007 MK Bug fixing
 "               09.10.2007 MK Now with round, square brackets, curly and angle
@@ -47,8 +42,6 @@ tar --create --bzip2				\
 " }}}1
 
 "------------------------------------------------------------------------------
-"   Copyright (C) 2006	Martin Krischik
-"
 "   Vim is Charityware - see ":help license" or uganda.txt for licence derainbow_parenthsiss.
 "------------------------------------------------------------------------------
 " vim: textwidth=0 nowrap tabstop=8 shiftwidth=3 softtabstop=3 noexpandtab
