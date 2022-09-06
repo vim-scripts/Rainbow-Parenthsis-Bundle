@@ -31,22 +31,29 @@
 " Section: highlight {{{1
 
 function rainbow_parenthsis#Activate()
-    highlight default level1c  ctermbg=LightGray ctermfg=brown        guibg=WhiteSmoke   guifg=RoyalBlue3
-    highlight default level2c  ctermbg=LightGray ctermfg=Darkblue     guibg=WhiteSmoke   guifg=SeaGreen3
-    highlight default level3c  ctermbg=LightGray ctermfg=darkgray     guibg=WhiteSmoke   guifg=DarkOrchid3
-    highlight default level4c  ctermbg=LightGray ctermfg=darkgreen    guibg=WhiteSmoke   guifg=firebrick3
-    highlight default level5c  ctermbg=LightGray ctermfg=darkcyan     guibg=AntiqueWhite guifg=RoyalBlue3
-    highlight default level6c  ctermbg=LightGray ctermfg=darkred      guibg=AntiqueWhite guifg=SeaGreen3
-    highlight default level7c  ctermbg=LightGray ctermfg=darkmagenta  guibg=AntiqueWhite guifg=DarkOrchid3
-    highlight default level8c  ctermbg=LightGray ctermfg=brown        guibg=AntiqueWhite guifg=firebrick3
-    highlight default level9c  ctermbg=LightGray ctermfg=gray         guibg=LemonChiffon guifg=RoyalBlue3
-    highlight default level10c ctermbg=LightGray ctermfg=black        guibg=LemonChiffon guifg=SeaGreen3
-    highlight default level11c ctermbg=LightGray ctermfg=darkmagenta  guibg=LemonChiffon guifg=DarkOrchid3
-    highlight default level12c ctermbg=LightGray ctermfg=Darkblue     guibg=LemonChiffon guifg=firebrick3
-    highlight default level13c ctermbg=LightGray ctermfg=darkgreen    guibg=AliceBlue    guifg=RoyalBlue3
-    highlight default level14c ctermbg=LightGray ctermfg=darkcyan     guibg=AliceBlue    guifg=SeaGreen3
-    highlight default level15c ctermbg=LightGray ctermfg=darkred      guibg=AliceBlue    guifg=DarkOrchid3
-    highlight default level16c ctermbg=LightGray ctermfg=red          guibg=AliceBlue    guifg=firebrick3
+    if &bg == "dark"
+        hi default   hlLevel0 ctermfg=cyan        guifg=greenyellow
+        hi default   hlLevel1 ctermfg=magenta     guifg=green1
+        hi default   hlLevel2 ctermfg=red         guifg=springgreen1
+        hi default   hlLevel3 ctermfg=yellow      guifg=cyan1
+        hi default   hlLevel4 ctermfg=green       guifg=slateblue1
+        hi default   hlLevel5 ctermfg=cyan        guifg=magenta1
+        hi default   hlLevel6 ctermfg=magenta     guifg=purple1
+        hi default   hlLevel7 ctermfg=red         guifg=red1
+        hi default   hlLevel8 ctermfg=yellow      guifg=orange1
+        hi default   hlLevel9 ctermfg=green       guifg=yellow1
+    else
+        hi default   hlLevel0 ctermfg=blue        guifg=yellow3
+        hi default   hlLevel1 ctermfg=darkmagenta guifg=olivedrab4
+        hi default   hlLevel2 ctermfg=red         guifg=green4
+        hi default   hlLevel3 ctermfg=darkyellow  guifg=paleturquoise3
+        hi default   hlLevel4 ctermfg=darkgreen   guifg=deepskyblue4
+        hi default   hlLevel5 ctermfg=blue        guifg=darkslateblue
+        hi default   hlLevel6 ctermfg=darkmagenta guifg=darkviolet
+        hi default   hlLevel7 ctermfg=red         guifg=red3
+        hi default   hlLevel8 ctermfg=darkyellow  guifg=orangered3
+        hi default   hlLevel9 ctermfg=darkgreen   guifg=orange2
+    endif
     let rainbow_parenthesis#active = 1
 endfunction
 
@@ -63,7 +70,7 @@ function rainbow_parenthsis#Toggle ()
     if ! exists('rainbow_parenthesis#active')
         call rainbow_parenthsis#LoadRound ()
     endif
-    if rainbow_parenthesis#active != 0
+    if exists('rainbow_parenthesis#active') && rainbow_parenthesis#active != 0
         call rainbow_parenthsis#Clear ()
     else
         call rainbow_parenthsis#Activate ()
@@ -75,88 +82,72 @@ endfunction
 " Subsection: parentheses or round brackets: {{{2
 "
 function rainbow_parenthsis#LoadRound ()
-    syntax region level1 matchgroup=level1c start=/(/ end=/)/ contains=TOP,level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level2 matchgroup=level2c start=/(/ end=/)/ contains=TOP,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level3 matchgroup=level3c start=/(/ end=/)/ contains=TOP,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level4 matchgroup=level4c start=/(/ end=/)/ contains=TOP,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level5 matchgroup=level5c start=/(/ end=/)/ contains=TOP,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level6 matchgroup=level6c start=/(/ end=/)/ contains=TOP,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level7 matchgroup=level7c start=/(/ end=/)/ contains=TOP,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level8 matchgroup=level8c start=/(/ end=/)/ contains=TOP,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level9 matchgroup=level9c start=/(/ end=/)/ contains=TOP,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level10 matchgroup=level10c start=/(/ end=/)/ contains=TOP,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level11 matchgroup=level11c start=/(/ end=/)/ contains=TOP,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level12 matchgroup=level12c start=/(/ end=/)/ contains=TOP,level12,level13,level14,level15, level16,NoInParens
-    syntax region level13 matchgroup=level13c start=/(/ end=/)/ contains=TOP,level13,level14,level15, level16,NoInParens
-    syntax region level14 matchgroup=level14c start=/(/ end=/)/ contains=TOP,level14,level15, level16,NoInParens
-    syntax region level15 matchgroup=level15c start=/(/ end=/)/ contains=TOP,level15, level16,NoInParens
-    syntax region level16 matchgroup=level16c start=/(/ end=/)/ contains=TOP,level16,NoInParens
+    syn match ParenError display ')'
+    syn region Paren  transparent matchgroup=hlLevel0 start='(' end=')' contains=Paren1,TOP containedin=TOP
+    syn region Paren1 transparent matchgroup=hlLevel1 start='(' end=')' contains=Paren2,TOP
+    syn region Paren2 transparent matchgroup=hlLevel2 start='(' end=')' contains=Paren3,TOP
+    syn region Paren3 transparent matchgroup=hlLevel3 start='(' end=')' contains=Paren4,TOP
+    syn region Paren4 transparent matchgroup=hlLevel4 start='(' end=')' contains=Paren5,TOP
+    syn region Paren5 transparent matchgroup=hlLevel5 start='(' end=')' contains=Paren6,TOP
+    syn region Paren6 transparent matchgroup=hlLevel6 start='(' end=')' contains=Paren7,TOP
+    syn region Paren7 transparent matchgroup=hlLevel7 start='(' end=')' contains=Paren8,TOP
+    syn region Paren8 transparent matchgroup=hlLevel8 start='(' end=')' contains=Paren9,TOP
+    syn region Paren9 transparent matchgroup=hlLevel9 start='(' end=')' contains=Paren,TOP
+    hi link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
 
 " Subsection: box brackets or square brackets: {{{2
 "
 function rainbow_parenthsis#LoadSquare ()
-    syntax region level1 matchgroup=level1c start=/\[/ end=/\]/ contains=TOP,level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level2 matchgroup=level2c start=/\[/ end=/\]/ contains=TOP,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level3 matchgroup=level3c start=/\[/ end=/\]/ contains=TOP,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level4 matchgroup=level4c start=/\[/ end=/\]/ contains=TOP,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level5 matchgroup=level5c start=/\[/ end=/\]/ contains=TOP,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level6 matchgroup=level6c start=/\[/ end=/\]/ contains=TOP,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level7 matchgroup=level7c start=/\[/ end=/\]/ contains=TOP,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level8 matchgroup=level8c start=/\[/ end=/\]/ contains=TOP,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level9 matchgroup=level9c start=/\[/ end=/\]/ contains=TOP,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level10 matchgroup=level10c start=/\[/ end=/\]/ contains=TOP,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level11 matchgroup=level11c start=/\[/ end=/\]/ contains=TOP,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level12 matchgroup=level12c start=/\[/ end=/\]/ contains=TOP,level12,level13,level14,level15, level16,NoInParens
-    syntax region level13 matchgroup=level13c start=/\[/ end=/\]/ contains=TOP,level13,level14,level15, level16,NoInParens
-    syntax region level14 matchgroup=level14c start=/\[/ end=/\]/ contains=TOP,level14,level15, level16,NoInParens
-    syntax region level15 matchgroup=level15c start=/\[/ end=/\]/ contains=TOP,level15, level16,NoInParens
-    syntax region level16 matchgroup=level16c start=/\[/ end=/\]/ contains=TOP,level16,NoInParens
+    syn match ParenError display ']'
+    syn region Paren  transparent matchgroup=hlLevel0 start='[' end=']' contains=Paren1,TOP containedin=TOP
+    syn region Paren1 transparent matchgroup=hlLevel1 start='[' end=']' contains=Paren2
+    syn region Paren2 transparent matchgroup=hlLevel2 start='[' end=']' contains=Paren3
+    syn region Paren3 transparent matchgroup=hlLevel3 start='[' end=']' contains=Paren4
+    syn region Paren4 transparent matchgroup=hlLevel4 start='[' end=']' contains=Paren5
+    syn region Paren5 transparent matchgroup=hlLevel5 start='[' end=']' contains=Paren6
+    syn region Paren6 transparent matchgroup=hlLevel6 start='[' end=']' contains=Paren7
+    syn region Paren7 transparent matchgroup=hlLevel7 start='[' end=']' contains=Paren8
+    syn region Paren8 transparent matchgroup=hlLevel8 start='[' end=']' contains=Paren9
+    syn region Paren9 transparent matchgroup=hlLevel9 start='[' end=']' contains=Paren
+    hi link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
 
 " Subsection: curly brackets or braces: {{{2
 "
 function rainbow_parenthsis#LoadBraces ()
-    syntax region level1 matchgroup=level1c start=/{/ end=/}/ contains=TOP,level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level2 matchgroup=level2c start=/{/ end=/}/ contains=TOP,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level3 matchgroup=level3c start=/{/ end=/}/ contains=TOP,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level4 matchgroup=level4c start=/{/ end=/}/ contains=TOP,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level5 matchgroup=level5c start=/{/ end=/}/ contains=TOP,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level6 matchgroup=level6c start=/{/ end=/}/ contains=TOP,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level7 matchgroup=level7c start=/{/ end=/}/ contains=TOP,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level8 matchgroup=level8c start=/{/ end=/}/ contains=TOP,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level9 matchgroup=level9c start=/{/ end=/}/ contains=TOP,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level10 matchgroup=level10c start=/{/ end=/}/ contains=TOP,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level11 matchgroup=level11c start=/{/ end=/}/ contains=TOP,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level12 matchgroup=level12c start=/{/ end=/}/ contains=TOP,level12,level13,level14,level15, level16,NoInParens
-    syntax region level13 matchgroup=level13c start=/{/ end=/}/ contains=TOP,level13,level14,level15, level16,NoInParens
-    syntax region level14 matchgroup=level14c start=/{/ end=/}/ contains=TOP,level14,level15, level16,NoInParens
-    syntax region level15 matchgroup=level15c start=/{/ end=/}/ contains=TOP,level15, level16,NoInParens
-    syntax region level16 matchgroup=level16c start=/{/ end=/}/ contains=TOP,level16,NoInParens
+    syn match ParenError display '}'
+    syn region Paren  transparent matchgroup=hlLevel0 start='{' end='}' contains=Paren1,TOP containedin=TOP
+    syn region Paren1 transparent matchgroup=hlLevel1 start='{' end='}' contains=Paren2
+    syn region Paren2 transparent matchgroup=hlLevel2 start='{' end='}' contains=Paren3
+    syn region Paren3 transparent matchgroup=hlLevel3 start='{' end='}' contains=Paren4
+    syn region Paren4 transparent matchgroup=hlLevel4 start='{' end='}' contains=Paren5
+    syn region Paren5 transparent matchgroup=hlLevel5 start='{' end='}' contains=Paren6
+    syn region Paren6 transparent matchgroup=hlLevel6 start='{' end='}' contains=Paren7
+    syn region Paren7 transparent matchgroup=hlLevel7 start='{' end='}' contains=Paren8
+    syn region Paren8 transparent matchgroup=hlLevel8 start='{' end='}' contains=Paren9
+    syn region Paren9 transparent matchgroup=hlLevel9 start='{' end='}' contains=Paren
+    hi link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
 
 " Subsection: angle brackets or chevrons: {{{2
 "
 function rainbow_parenthsis#LoadChevrons ()
-    syntax region level1 matchgroup=level1c start=/</ end=/>/ contains=TOP,level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level2 matchgroup=level2c start=/</ end=/>/ contains=TOP,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level3 matchgroup=level3c start=/</ end=/>/ contains=TOP,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level4 matchgroup=level4c start=/</ end=/>/ contains=TOP,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level5 matchgroup=level5c start=/</ end=/>/ contains=TOP,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level6 matchgroup=level6c start=/</ end=/>/ contains=TOP,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level7 matchgroup=level7c start=/</ end=/>/ contains=TOP,level7,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level8 matchgroup=level8c start=/</ end=/>/ contains=TOP,level8,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level9 matchgroup=level9c start=/</ end=/>/ contains=TOP,level9,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level10 matchgroup=level10c start=/</ end=/>/ contains=TOP,level10,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level11 matchgroup=level11c start=/</ end=/>/ contains=TOP,level11,level12,level13,level14,level15, level16,NoInParens
-    syntax region level12 matchgroup=level12c start=/</ end=/>/ contains=TOP,level12,level13,level14,level15, level16,NoInParens
-    syntax region level13 matchgroup=level13c start=/</ end=/>/ contains=TOP,level13,level14,level15, level16,NoInParens
-    syntax region level14 matchgroup=level14c start=/</ end=/>/ contains=TOP,level14,level15, level16,NoInParens
-    syntax region level15 matchgroup=level15c start=/</ end=/>/ contains=TOP,level15, level16,NoInParens
-    syntax region level16 matchgroup=level16c start=/</ end=/>/ contains=TOP,level16,NoInParens
+    syn match ParenError display '>'
+    syn region Paren  transparent matchgroup=hlLevel0 start='<' end='>' contains=Paren1,TOP containedin=TOP
+    syn region Paren1 transparent matchgroup=hlLevel1 start='<' end='>' contains=Paren2
+    syn region Paren2 transparent matchgroup=hlLevel2 start='<' end='>' contains=Paren3
+    syn region Paren3 transparent matchgroup=hlLevel3 start='<' end='>' contains=Paren4
+    syn region Paren4 transparent matchgroup=hlLevel4 start='<' end='>' contains=Paren5
+    syn region Paren5 transparent matchgroup=hlLevel5 start='<' end='>' contains=Paren6
+    syn region Paren6 transparent matchgroup=hlLevel6 start='<' end='>' contains=Paren7
+    syn region Paren7 transparent matchgroup=hlLevel7 start='<' end='>' contains=Paren8
+    syn region Paren8 transparent matchgroup=hlLevel8 start='<' end='>' contains=Paren9
+    syn region Paren9 transparent matchgroup=hlLevel9 start='<' end='>' contains=Paren
+    hi link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
 
