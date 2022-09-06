@@ -31,22 +31,33 @@
 " Section: highlight {{{1
 
 function rainbow_parenthsis#Activate()
-    highlight default level1c  ctermbg=LightGray ctermfg=brown        guibg=WhiteSmoke   guifg=RoyalBlue3
-    highlight default level2c  ctermbg=LightGray ctermfg=Darkblue     guibg=WhiteSmoke   guifg=SeaGreen3
-    highlight default level3c  ctermbg=LightGray ctermfg=darkgray     guibg=WhiteSmoke   guifg=DarkOrchid3
-    highlight default level4c  ctermbg=LightGray ctermfg=darkgreen    guibg=WhiteSmoke   guifg=firebrick3
-    highlight default level5c  ctermbg=LightGray ctermfg=darkcyan     guibg=AntiqueWhite guifg=RoyalBlue3
-    highlight default level6c  ctermbg=LightGray ctermfg=darkred      guibg=AntiqueWhite guifg=SeaGreen3
-    highlight default level7c  ctermbg=LightGray ctermfg=darkmagenta  guibg=AntiqueWhite guifg=DarkOrchid3
-    highlight default level8c  ctermbg=LightGray ctermfg=brown        guibg=AntiqueWhite guifg=firebrick3
-    highlight default level9c  ctermbg=LightGray ctermfg=gray         guibg=LemonChiffon guifg=RoyalBlue3
-    highlight default level10c ctermbg=LightGray ctermfg=black        guibg=LemonChiffon guifg=SeaGreen3
-    highlight default level11c ctermbg=LightGray ctermfg=darkmagenta  guibg=LemonChiffon guifg=DarkOrchid3
-    highlight default level12c ctermbg=LightGray ctermfg=Darkblue     guibg=LemonChiffon guifg=firebrick3
-    highlight default level13c ctermbg=LightGray ctermfg=darkgreen    guibg=AliceBlue    guifg=RoyalBlue3
-    highlight default level14c ctermbg=LightGray ctermfg=darkcyan     guibg=AliceBlue    guifg=SeaGreen3
-    highlight default level15c ctermbg=LightGray ctermfg=darkred      guibg=AliceBlue    guifg=DarkOrchid3
-    highlight default level16c ctermbg=LightGray ctermfg=red          guibg=AliceBlue    guifg=firebrick3
+    highlight default level1c  ctermfg=brown        guifg=RoyalBlue3
+    highlight default level2c  ctermfg=Darkblue     guifg=SeaGreen3
+    highlight default level3c  ctermfg=darkgray     guifg=DarkOrchid3
+    highlight default level4c  ctermfg=darkgreen    guifg=firebrick3
+    highlight default level5c  ctermfg=darkcyan     guifg=RoyalBlue3
+    highlight default level6c  ctermfg=darkred      guifg=SeaGreen3
+    highlight default level7c  ctermfg=darkmagenta  guifg=DarkOrchid3
+"    highlight default level8c  ctermfg=brown        guifg=firebrick3
+"    highlight default level9c  ctermfg=gray         guifg=RoyalBlue3
+"    highlight default level10c ctermfg=black        guifg=SeaGreen3
+"    highlight default level11c ctermfg=darkmagenta  guifg=DarkOrchid3
+"    highlight default level12c ctermfg=Darkblue     guifg=firebrick3
+"    highlight default level13c ctermfg=darkgreen    guifg=RoyalBlue3
+"    highlight default level14c ctermfg=darkcyan     guifg=SeaGreen3
+"    highlight default level15c ctermfg=darkred      guifg=DarkOrchid3
+"    highlight default level16c ctermfg=red          guifg=firebrick3
+
+    highlight default level8c  ctermfg=brown           guifg=orange1
+    highlight default level9c  ctermfg=Darkblue        guifg=yellow1
+    highlight default level10c  ctermfg=darkgray        guifg=greenyellow
+    highlight default level11c  ctermfg=darkgreen       guifg=green1
+    highlight default level12c  ctermfg=darkcyan        guifg=springgreen1
+    highlight default level13c  ctermfg=darkred         guifg=cyan1
+    highlight default level14c  ctermfg=darkmagenta     guifg=slateblue1
+    highlight default level15c  ctermfg=brown           guifg=magenta1
+    highlight default level16c  ctermfg=gray            guifg=purple1
+
     let rainbow_parenthesis#active = 1
 endfunction
 
@@ -62,6 +73,7 @@ endfunction
 function rainbow_parenthsis#Toggle ()
     if ! exists('rainbow_parenthesis#active')
         call rainbow_parenthsis#LoadRound ()
+        let rainbow_parenthesis#active = 0
     endif
     if rainbow_parenthesis#active != 0
         call rainbow_parenthsis#Clear ()
