@@ -1,3 +1,7 @@
+Fork of original.  Forked primarily to remove the background color on the
+syntax highlighting.
+
+
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=1561
 
 Based on the original rainbow_parenthsis from john gilmore but enhanced for gui mode.
