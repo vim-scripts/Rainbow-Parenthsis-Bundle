@@ -36,8 +36,8 @@ commands.  For more information, see |preview-window|.
 The rainbow_parenthsis plugin does not create any automatic mappings, but provides the
 following commands:
 
-						    *:ToggleRaibowParenthesis*
-|:ToggleRaibowParenthesis|
+						    *:ToggleRainbowParenthesis*
+|:ToggleRainbowParenthesis|
 	Manualy start rainbow parenthesis.. If no bracket type has been loaded
 	yet then round brackets will be loaded by default.
 
@@ -56,7 +56,7 @@ following commands:
 	yet then round brackets will be loaded.
 
 |rainbow_parenthsis#LoadRound()|	       *rainbow_parenthsis#LoadRound()*
-	Load syntax for parenthesis or round brackets '(' ')' - This will be 
+	Load syntax for parenthesis or round brackets '(' ')' - This will be
 	loaded by default if nothing else has been loaded.
 
 |rainbow_parenthsis#LoadSquare()|	      *rainbow_parenthsis#LoadSquare()*

@@ -22,7 +22,7 @@
 " times.
 "------------------------------------------------------------------------------
 
-command! -nargs=0 ToggleRaibowParenthesis call rainbow_parenthsis#Toggle()
+command! -nargs=0 ToggleRainbowParenthesis call rainbow_parenthsis#Toggle()
 
 finish
 
