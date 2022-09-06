@@ -4,6 +4,7 @@
 "   Maintainer: Martin Krischik (krischik@users.sourceforge.net)
 "               John Gilmore
 "               Luc Hermitte (hermitte@free.fr)
+"               slve (https://github.com/slve)
 "      Version: 4.0
 "      History: 24.05.2006 MK Unified Headers
 "               15.10.2006 MK Bram's suggestion for runtime integration
@@ -13,6 +14,7 @@
 "                             impove memory consumtion and startup performance
 "               09.10.2007 MK Now with round, square brackets, curly and angle
 "                             brackets.
+"               06.09.2022 SL Improve to handle more then 16 level
 "        Usage: copy to autoload directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
@@ -26,37 +28,50 @@
 " Section: highlight {{{1
 
 function rainbow_parenthsis#Activate()
-    if &bg == "dark"
-        hi default   hlLevel0 ctermfg=cyan        guifg=greenyellow
-        hi default   hlLevel1 ctermfg=magenta     guifg=green1
-        hi default   hlLevel2 ctermfg=red         guifg=springgreen1
-        hi default   hlLevel3 ctermfg=yellow      guifg=cyan1
-        hi default   hlLevel4 ctermfg=green       guifg=slateblue1
-        hi default   hlLevel5 ctermfg=cyan        guifg=magenta1
-        hi default   hlLevel6 ctermfg=magenta     guifg=purple1
-        hi default   hlLevel7 ctermfg=red         guifg=red1
-        hi default   hlLevel8 ctermfg=yellow      guifg=orange1
-        hi default   hlLevel9 ctermfg=green       guifg=yellow1
+    if g:rainbow_parenthsis#Color_Set == "slve"
+        if &bg == "dark"
+            highlight default hlLevel0 ctermfg=cyan        guifg=greenyellow
+            highlight default hlLevel1 ctermfg=magenta     guifg=green1
+            highlight default hlLevel2 ctermfg=red         guifg=springgreen1
+            highlight default hlLevel3 ctermfg=yellow      guifg=cyan1
+            highlight default hlLevel4 ctermfg=green       guifg=slateblue1
+            highlight default hlLevel5 ctermfg=cyan        guifg=magenta1
+            highlight default hlLevel6 ctermfg=magenta     guifg=purple1
+            highlight default hlLevel7 ctermfg=red         guifg=red1
+            highlight default hlLevel8 ctermfg=yellow      guifg=orange1
+            highlight default hlLevel9 ctermfg=green       guifg=yellow1
+        else
+            highlight default hlLevel0 ctermfg=blue        guifg=yellow3
+            highlight default hlLevel1 ctermfg=darkmagenta guifg=olivedrab4
+            highlight default hlLevel2 ctermfg=red         guifg=green4
+            highlight default hlLevel3 ctermfg=darkyellow  guifg=paleturquoise3
+            highlight default hlLevel4 ctermfg=darkgreen   guifg=deepskyblue4
+            highlight default hlLevel5 ctermfg=blue        guifg=darkslateblue
+            highlight default hlLevel6 ctermfg=darkmagenta guifg=darkviolet
+            highlight default hlLevel7 ctermfg=red         guifg=red3
+            highlight default hlLevel8 ctermfg=darkyellow  guifg=orangered3
+            highlight default hlLevel9 ctermfg=darkgreen   guifg=orange2
+        endif
     else
-        hi default   hlLevel0 ctermfg=blue        guifg=yellow3
-        hi default   hlLevel1 ctermfg=darkmagenta guifg=olivedrab4
-        hi default   hlLevel2 ctermfg=red         guifg=green4
-        hi default   hlLevel3 ctermfg=darkyellow  guifg=paleturquoise3
-        hi default   hlLevel4 ctermfg=darkgreen   guifg=deepskyblue4
-        hi default   hlLevel5 ctermfg=blue        guifg=darkslateblue
-        hi default   hlLevel6 ctermfg=darkmagenta guifg=darkviolet
-        hi default   hlLevel7 ctermfg=red         guifg=red3
-        hi default   hlLevel8 ctermfg=darkyellow  guifg=orangered3
-        hi default   hlLevel9 ctermfg=darkgreen   guifg=orange2
+        highlight default hlLevel0 ctermbg=LightGray ctermfg=brown        guibg=WhiteSmoke   guifg=RoyalBlue3
+        highlight default hlLevel1 ctermbg=LightGray ctermfg=Darkblue     guibg=WhiteSmoke   guifg=SeaGreen3
+        highlight default hlLevel2 ctermbg=LightGray ctermfg=darkgray     guibg=WhiteSmoke   guifg=DarkOrchid3
+        highlight default hlLevel3 ctermbg=LightGray ctermfg=darkgreen    guibg=WhiteSmoke   guifg=firebrick3
+        highlight default hlLevel4 ctermbg=LightGray ctermfg=darkcyan     guibg=AntiqueWhite guifg=RoyalBlue3
+        highlight default hlLevel5 ctermbg=LightGray ctermfg=darkred      guibg=AntiqueWhite guifg=SeaGreen3
+        highlight default hlLevel6 ctermbg=LightGray ctermfg=darkmagenta  guibg=AntiqueWhite guifg=DarkOrchid3
+        highlight default hlLevel7 ctermbg=LightGray ctermfg=brown        guibg=AntiqueWhite guifg=firebrick3
+        highlight default hlLevel8 ctermbg=LightGray ctermfg=gray         guibg=LemonChiffon guifg=RoyalBlue3
+        highlight default hlLevel9 ctermbg=LightGray ctermfg=black        guibg=LemonChiffon guifg=SeaGreen3
     endif
     let rainbow_parenthesis#active = 1
 endfunction
 
 function rainbow_parenthsis#Clear()
     let i = 0
-    while i != 16
+    while i != 10
+        exe 'highlight clear hlLevel' . i
         let i = i + 1
-        exe 'highlight clear level' . i . 'c'
     endwhile
     let rainbow_parenthesis#active = 0
 endfunction
@@ -77,71 +92,71 @@ endfunction
 " Subsection: parentheses or round brackets: {{{2
 "
 function rainbow_parenthsis#LoadRound ()
-    syn match ParenError display ')'
-    syn region Paren  transparent matchgroup=hlLevel0 start='(' end=')' contains=Paren1,TOP containedin=TOP
-    syn region Paren1 transparent matchgroup=hlLevel1 start='(' end=')' contains=Paren2,TOP
-    syn region Paren2 transparent matchgroup=hlLevel2 start='(' end=')' contains=Paren3,TOP
-    syn region Paren3 transparent matchgroup=hlLevel3 start='(' end=')' contains=Paren4,TOP
-    syn region Paren4 transparent matchgroup=hlLevel4 start='(' end=')' contains=Paren5,TOP
-    syn region Paren5 transparent matchgroup=hlLevel5 start='(' end=')' contains=Paren6,TOP
-    syn region Paren6 transparent matchgroup=hlLevel6 start='(' end=')' contains=Paren7,TOP
-    syn region Paren7 transparent matchgroup=hlLevel7 start='(' end=')' contains=Paren8,TOP
-    syn region Paren8 transparent matchgroup=hlLevel8 start='(' end=')' contains=Paren9,TOP
-    syn region Paren9 transparent matchgroup=hlLevel9 start='(' end=')' contains=Paren,TOP
-    hi link ParenError Error
+    syntax match ParenError display ')'
+    syntax region Paren  transparent matchgroup=hlLevel0 start='(' end=')' contains=Paren1,TOP containedin=TOP
+    syntax region Paren1 transparent matchgroup=hlLevel1 start='(' end=')' contains=Paren2,TOP
+    syntax region Paren2 transparent matchgroup=hlLevel2 start='(' end=')' contains=Paren3,TOP
+    syntax region Paren3 transparent matchgroup=hlLevel3 start='(' end=')' contains=Paren4,TOP
+    syntax region Paren4 transparent matchgroup=hlLevel4 start='(' end=')' contains=Paren5,TOP
+    syntax region Paren5 transparent matchgroup=hlLevel5 start='(' end=')' contains=Paren6,TOP
+    syntax region Paren6 transparent matchgroup=hlLevel6 start='(' end=')' contains=Paren7,TOP
+    syntax region Paren7 transparent matchgroup=hlLevel7 start='(' end=')' contains=Paren8,TOP
+    syntax region Paren8 transparent matchgroup=hlLevel8 start='(' end=')' contains=Paren9,TOP
+    syntax region Paren9 transparent matchgroup=hlLevel9 start='(' end=')' contains=Paren,TOP
+    highlight link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
 
 " Subsection: box brackets or square brackets: {{{2
 "
 function rainbow_parenthsis#LoadSquare ()
-    syn match ParenError display ']'
-    syn region Paren  transparent matchgroup=hlLevel0 start='[' end=']' contains=Paren1,TOP containedin=TOP
-    syn region Paren1 transparent matchgroup=hlLevel1 start='[' end=']' contains=Paren2
-    syn region Paren2 transparent matchgroup=hlLevel2 start='[' end=']' contains=Paren3
-    syn region Paren3 transparent matchgroup=hlLevel3 start='[' end=']' contains=Paren4
-    syn region Paren4 transparent matchgroup=hlLevel4 start='[' end=']' contains=Paren5
-    syn region Paren5 transparent matchgroup=hlLevel5 start='[' end=']' contains=Paren6
-    syn region Paren6 transparent matchgroup=hlLevel6 start='[' end=']' contains=Paren7
-    syn region Paren7 transparent matchgroup=hlLevel7 start='[' end=']' contains=Paren8
-    syn region Paren8 transparent matchgroup=hlLevel8 start='[' end=']' contains=Paren9
-    syn region Paren9 transparent matchgroup=hlLevel9 start='[' end=']' contains=Paren
-    hi link ParenError Error
+    syntax match ParenError display ']'
+    syntax region Paren  transparent matchgroup=hlLevel0 start='[' end=']' contains=Paren1,TOP containedin=TOP
+    syntax region Paren1 transparent matchgroup=hlLevel1 start='[' end=']' contains=Paren2
+    syntax region Paren2 transparent matchgroup=hlLevel2 start='[' end=']' contains=Paren3
+    syntax region Paren3 transparent matchgroup=hlLevel3 start='[' end=']' contains=Paren4
+    syntax region Paren4 transparent matchgroup=hlLevel4 start='[' end=']' contains=Paren5
+    syntax region Paren5 transparent matchgroup=hlLevel5 start='[' end=']' contains=Paren6
+    syntax region Paren6 transparent matchgroup=hlLevel6 start='[' end=']' contains=Paren7
+    syntax region Paren7 transparent matchgroup=hlLevel7 start='[' end=']' contains=Paren8
+    syntax region Paren8 transparent matchgroup=hlLevel8 start='[' end=']' contains=Paren9
+    syntax region Paren9 transparent matchgroup=hlLevel9 start='[' end=']' contains=Paren
+    highlight link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
 
 " Subsection: curly brackets or braces: {{{2
 "
 function rainbow_parenthsis#LoadBraces ()
-    syn match ParenError display '}'
-    syn region Paren  transparent matchgroup=hlLevel0 start='{' end='}' contains=Paren1,TOP containedin=TOP
-    syn region Paren1 transparent matchgroup=hlLevel1 start='{' end='}' contains=Paren2
-    syn region Paren2 transparent matchgroup=hlLevel2 start='{' end='}' contains=Paren3
-    syn region Paren3 transparent matchgroup=hlLevel3 start='{' end='}' contains=Paren4
-    syn region Paren4 transparent matchgroup=hlLevel4 start='{' end='}' contains=Paren5
-    syn region Paren5 transparent matchgroup=hlLevel5 start='{' end='}' contains=Paren6
-    syn region Paren6 transparent matchgroup=hlLevel6 start='{' end='}' contains=Paren7
-    syn region Paren7 transparent matchgroup=hlLevel7 start='{' end='}' contains=Paren8
-    syn region Paren8 transparent matchgroup=hlLevel8 start='{' end='}' contains=Paren9
-    syn region Paren9 transparent matchgroup=hlLevel9 start='{' end='}' contains=Paren
-    hi link ParenError Error
+    syntax match ParenError display '}'
+    syntax region Paren  transparent matchgroup=hlLevel0 start='{' end='}' contains=Paren1,TOP containedin=TOP
+    syntax region Paren1 transparent matchgroup=hlLevel1 start='{' end='}' contains=Paren2
+    syntax region Paren2 transparent matchgroup=hlLevel2 start='{' end='}' contains=Paren3
+    syntax region Paren3 transparent matchgroup=hlLevel3 start='{' end='}' contains=Paren4
+    syntax region Paren4 transparent matchgroup=hlLevel4 start='{' end='}' contains=Paren5
+    syntax region Paren5 transparent matchgroup=hlLevel5 start='{' end='}' contains=Paren6
+    syntax region Paren6 transparent matchgroup=hlLevel6 start='{' end='}' contains=Paren7
+    syntax region Paren7 transparent matchgroup=hlLevel7 start='{' end='}' contains=Paren8
+    syntax region Paren8 transparent matchgroup=hlLevel8 start='{' end='}' contains=Paren9
+    syntax region Paren9 transparent matchgroup=hlLevel9 start='{' end='}' contains=Paren
+    highlight link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
 
 " Subsection: angle brackets or chevrons: {{{2
 "
 function rainbow_parenthsis#LoadChevrons ()
-    syn match ParenError display '>'
-    syn region Paren  transparent matchgroup=hlLevel0 start='<' end='>' contains=Paren1,TOP containedin=TOP
-    syn region Paren1 transparent matchgroup=hlLevel1 start='<' end='>' contains=Paren2
-    syn region Paren2 transparent matchgroup=hlLevel2 start='<' end='>' contains=Paren3
-    syn region Paren3 transparent matchgroup=hlLevel3 start='<' end='>' contains=Paren4
-    syn region Paren4 transparent matchgroup=hlLevel4 start='<' end='>' contains=Paren5
-    syn region Paren5 transparent matchgroup=hlLevel5 start='<' end='>' contains=Paren6
-    syn region Paren6 transparent matchgroup=hlLevel6 start='<' end='>' contains=Paren7
-    syn region Paren7 transparent matchgroup=hlLevel7 start='<' end='>' contains=Paren8
-    syn region Paren8 transparent matchgroup=hlLevel8 start='<' end='>' contains=Paren9
-    syn region Paren9 transparent matchgroup=hlLevel9 start='<' end='>' contains=Paren
+    syntax match ParenError display '>'
+    syntax region Paren  transparent matchgroup=hlLevel0 start='<' end='>' contains=Paren1,TOP containedin=TOP
+    syntax region Paren1 transparent matchgroup=hlLevel1 start='<' end='>' contains=Paren2
+    syntax region Paren2 transparent matchgroup=hlLevel2 start='<' end='>' contains=Paren3
+    syntax region Paren3 transparent matchgroup=hlLevel3 start='<' end='>' contains=Paren4
+    syntax region Paren4 transparent matchgroup=hlLevel4 start='<' end='>' contains=Paren5
+    syntax region Paren5 transparent matchgroup=hlLevel5 start='<' end='>' contains=Paren6
+    syntax region Paren6 transparent matchgroup=hlLevel6 start='<' end='>' contains=Paren7
+    syntax region Paren7 transparent matchgroup=hlLevel7 start='<' end='>' contains=Paren8
+    syntax region Paren8 transparent matchgroup=hlLevel8 start='<' end='>' contains=Paren9
+    syntax region Paren9 transparent matchgroup=hlLevel9 start='<' end='>' contains=Paren
     hi link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
