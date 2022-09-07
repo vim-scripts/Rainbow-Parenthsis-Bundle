@@ -30,6 +30,10 @@
 " Section: highlight {{{1
 
 function rainbow_parenthesis#Activate()
+    if ! exists ('g:rainbow_parenthesis_color_set')
+        let g:rainbow_parenthesis_color_set="krischik"
+    endif
+
     if g:rainbow_parenthesis_color_set == "slve"
         if &bg == "dark"
             highlight default hlLevel0 ctermfg=cyan        guifg=greenyellow
@@ -66,6 +70,11 @@ function rainbow_parenthesis#Activate()
         highlight default hlLevel8 ctermbg=LightGray ctermfg=gray         guibg=LemonChiffon guifg=RoyalBlue3
         highlight default hlLevel9 ctermbg=LightGray ctermfg=black        guibg=LemonChiffon guifg=SeaGreen3
     endif
+
+    syntax cluster rainbow_parenthesis contains=hlLevel0,hlLevel1,hlLevel2,hlLevel3,hlLevel4,hlLevel5,hlLevel6,hlLevel7,hlLevel8,hlLevel9
+
+
+
     let rainbow_parenthesis#active = 1
 endfunction
 
@@ -95,16 +104,16 @@ endfunction
 "
 function rainbow_parenthesis#LoadRound ()
     syntax match ParenError display ')'
-    syntax region Paren  transparent matchgroup=hlLevel0 start='(' end=')' contains=Paren1,TOP containedin=TOP
-    syntax region Paren1 transparent matchgroup=hlLevel1 start='(' end=')' contains=Paren2,TOP
-    syntax region Paren2 transparent matchgroup=hlLevel2 start='(' end=')' contains=Paren3,TOP
-    syntax region Paren3 transparent matchgroup=hlLevel3 start='(' end=')' contains=Paren4,TOP
-    syntax region Paren4 transparent matchgroup=hlLevel4 start='(' end=')' contains=Paren5,TOP
-    syntax region Paren5 transparent matchgroup=hlLevel5 start='(' end=')' contains=Paren6,TOP
-    syntax region Paren6 transparent matchgroup=hlLevel6 start='(' end=')' contains=Paren7,TOP
-    syntax region Paren7 transparent matchgroup=hlLevel7 start='(' end=')' contains=Paren8,TOP
-    syntax region Paren8 transparent matchgroup=hlLevel8 start='(' end=')' contains=Paren9,TOP
-    syntax region Paren9 transparent matchgroup=hlLevel9 start='(' end=')' contains=Paren,TOP
+    syntax region Paren0 transparent matchgroup=hlLevel0 start='(' end=')' contains=TOP containedin=TOP
+    syntax region Paren1 transparent matchgroup=hlLevel1 start='(' end=')' contains=TOP,Paren3,Paren4
+    syntax region Paren2 transparent matchgroup=hlLevel2 start='(' end=')' contains=TOP,Paren4
+    syntax region Paren3 transparent matchgroup=hlLevel3 start='(' end=')' contains=TOP,Paren5
+    syntax region Paren4 transparent matchgroup=hlLevel4 start='(' end=')' contains=TOP,Paren6
+    syntax region Paren5 transparent matchgroup=hlLevel5 start='(' end=')' contains=TOP,Paren7
+    syntax region Paren6 transparent matchgroup=hlLevel6 start='(' end=')' contains=TOP,Paren8
+    syntax region Paren7 transparent matchgroup=hlLevel7 start='(' end=')' contains=TOP,Paren9
+    syntax region Paren8 transparent matchgroup=hlLevel8 start='(' end=')' contains=TOP,Paren0
+    syntax region Paren9 transparent matchgroup=hlLevel9 start='(' end=')' contains=TOP,Paren1
     highlight link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
@@ -113,7 +122,7 @@ endfunction
 "
 function rainbow_parenthesis#LoadSquare ()
     syntax match ParenError display ']'
-    syntax region Paren  transparent matchgroup=hlLevel0 start='[' end=']' contains=Paren1,TOP containedin=TOP
+    syntax region Paren0 transparent matchgroup=hlLevel0 start='[' end=']' contains=TOP,Paren1 containedin=TOP
     syntax region Paren1 transparent matchgroup=hlLevel1 start='[' end=']' contains=Paren2
     syntax region Paren2 transparent matchgroup=hlLevel2 start='[' end=']' contains=Paren3
     syntax region Paren3 transparent matchgroup=hlLevel3 start='[' end=']' contains=Paren4
@@ -122,7 +131,7 @@ function rainbow_parenthesis#LoadSquare ()
     syntax region Paren6 transparent matchgroup=hlLevel6 start='[' end=']' contains=Paren7
     syntax region Paren7 transparent matchgroup=hlLevel7 start='[' end=']' contains=Paren8
     syntax region Paren8 transparent matchgroup=hlLevel8 start='[' end=']' contains=Paren9
-    syntax region Paren9 transparent matchgroup=hlLevel9 start='[' end=']' contains=Paren
+    syntax region Paren9 transparent matchgroup=hlLevel9 start='[' end=']' contains=Paren0
     highlight link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
@@ -131,7 +140,7 @@ endfunction
 "
 function rainbow_parenthesis#LoadBraces ()
     syntax match ParenError display '}'
-    syntax region Paren  transparent matchgroup=hlLevel0 start='{' end='}' contains=Paren1,TOP containedin=TOP
+    syntax region Paren0 transparent matchgroup=hlLevel0 start='{' end='}' contains=Paren1,TOP containedin=TOP
     syntax region Paren1 transparent matchgroup=hlLevel1 start='{' end='}' contains=Paren2
     syntax region Paren2 transparent matchgroup=hlLevel2 start='{' end='}' contains=Paren3
     syntax region Paren3 transparent matchgroup=hlLevel3 start='{' end='}' contains=Paren4
@@ -140,7 +149,7 @@ function rainbow_parenthesis#LoadBraces ()
     syntax region Paren6 transparent matchgroup=hlLevel6 start='{' end='}' contains=Paren7
     syntax region Paren7 transparent matchgroup=hlLevel7 start='{' end='}' contains=Paren8
     syntax region Paren8 transparent matchgroup=hlLevel8 start='{' end='}' contains=Paren9
-    syntax region Paren9 transparent matchgroup=hlLevel9 start='{' end='}' contains=Paren
+    syntax region Paren9 transparent matchgroup=hlLevel9 start='{' end='}' contains=Paren0
     highlight link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction
@@ -149,7 +158,7 @@ endfunction
 "
 function rainbow_parenthesis#LoadChevrons ()
     syntax match ParenError display '>'
-    syntax region Paren  transparent matchgroup=hlLevel0 start='<' end='>' contains=Paren1,TOP containedin=TOP
+    syntax region Paren0 transparent matchgroup=hlLevel0 start='<' end='>' contains=Paren1,TOP containedin=TOP
     syntax region Paren1 transparent matchgroup=hlLevel1 start='<' end='>' contains=Paren2
     syntax region Paren2 transparent matchgroup=hlLevel2 start='<' end='>' contains=Paren3
     syntax region Paren3 transparent matchgroup=hlLevel3 start='<' end='>' contains=Paren4
@@ -158,7 +167,7 @@ function rainbow_parenthesis#LoadChevrons ()
     syntax region Paren6 transparent matchgroup=hlLevel6 start='<' end='>' contains=Paren7
     syntax region Paren7 transparent matchgroup=hlLevel7 start='<' end='>' contains=Paren8
     syntax region Paren8 transparent matchgroup=hlLevel8 start='<' end='>' contains=Paren9
-    syntax region Paren9 transparent matchgroup=hlLevel9 start='<' end='>' contains=Paren
+    syntax region Paren9 transparent matchgroup=hlLevel9 start='<' end='>' contains=Paren0
     hi link ParenError Error
     let rainbow_parenthesis#active = 0
 endfunction

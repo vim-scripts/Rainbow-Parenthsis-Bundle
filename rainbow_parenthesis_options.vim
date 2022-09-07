@@ -52,6 +52,14 @@ gcp --verbose --update doc/rainbow_parenthesis.txt       ~/vimfiles/doc/rainbow_
 gcp --verbose --update plugin/rainbow_parenthesis.vim    ~/vimfiles/plugin/rainbow_parenthesis.vim    
 gcp --verbose --update rainbow_parenthesis_options.vim   ~/vimfiles/rainbow_parenthesis_options.vim   
 
+git mv autoload/rainbow_parenthsis.vim  autoload/rainbow_parenthesis.vim  
+git mv doc/rainbow_parenthsis.txt       doc/rainbow_parenthesis.txt       
+git mv plugin/rainbow_parenthsis.vim    plugin/rainbow_parenthesis.vim    
+git mv rainbow_parenthsis_options.vim   rainbow_parenthesis_options.vim   
+
+%s /\Vparenthsis/parenthesis/g
+%s /\VParenthsis/Parenthesis/g
+
 " }}}1
 
 "------------------------------------------------------------------------------

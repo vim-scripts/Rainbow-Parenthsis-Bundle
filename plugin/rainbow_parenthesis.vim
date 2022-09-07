@@ -13,6 +13,7 @@
 "               09.10.2007 MK Now with round, square brackets, curly and angle
 "                             brackets.
 "               07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g 
+"               07.09.2022 MK Add Commmands for all functions
 "        Usage: copy to plugin directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
@@ -23,9 +24,16 @@
 " times.
 "------------------------------------------------------------------------------
 
-command! -nargs=0 ToggleRainbowParenthesis call rainbow_parenthesis#Toggle()
+command! -nargs=0 ToggleRainbowParenthesis        call rainbow_parenthesis#Toggle()
 
-finish
+# command! -nargs=0 RainbowParenthesisToggle        call rainbow_parenthesis#Toggle()
+# command! -nargs=0 RainbowParenthesisActivate      call rainbow_parenthesis#Activate()
+# command! -nargs=0 RainbowParenthesisClear         call rainbow_parenthesis#Clear()
+# command! -nargs=0 RainbowParenthesisToggle        call rainbow_parenthesis#Toggle ()
+# command! -nargs=0 RainbowParenthesisLoadRound     call rainbow_parenthesis#LoadRound ()
+# command! -nargs=0 RainbowParenthesisLoadSquare    call rainbow_parenthesis#LoadSquare ()
+# command! -nargs=0 RainbowParenthesisLoadBraces    call rainbow_parenthesis#LoadBraces ()
+# command! -nargs=0 RainbowParenthesisLoadChevrons  call rainbow_parenthesis#LoadChevrons ()
 
 "------------------------------------------------------------------------------
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.
