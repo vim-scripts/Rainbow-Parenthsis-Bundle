@@ -8,7 +8,7 @@
 "               09.10.2007 MK Now with round, square brackets, curly and angle
 "                             brackets.
 "               06.09.2022 MK Add colour sce
-"               07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g 
+"               07.09.2022 MK Fix spelling mistake s/parenthesis/parenthesis/g 
 "	 Usage: copy content into your .vimrc and change options to your
 "		liking.
 "    Help Page: rainbow_parenthesis.txt
@@ -47,11 +47,10 @@ tar --create --bzip2				\
 
 " Section: Quick Installation {{{1
 
-gcp --verbose --update autoload/rainbow_parenthsis.vim  ~/vimfiles/autoload/rainbow_parenthsis.vim  
-gcp --verbose --update doc/rainbow_parenthsis.txt       ~/vimfiles/doc/rainbow_parenthsis.txt       
-gcp --verbose --update plugin/rainbow_parenthsis.vim    ~/vimfiles/plugin/rainbow_parenthsis.vim    
-gcp --verbose --update rainbow_parenthsis_options.vim   ~/vimfiles/rainbow_parenthsis_options.vim   
-
+gcp --verbose --update autoload/rainbow_parenthesis.vim  ~/vimfiles/autoload/rainbow_parenthesis.vim  
+gcp --verbose --update doc/rainbow_parenthesis.txt       ~/vimfiles/doc/rainbow_parenthesis.txt       
+gcp --verbose --update plugin/rainbow_parenthesis.vim    ~/vimfiles/plugin/rainbow_parenthesis.vim    
+gcp --verbose --update rainbow_parenthesis_options.vim   ~/vimfiles/rainbow_parenthesis_options.vim   
 
 " }}}1
 
