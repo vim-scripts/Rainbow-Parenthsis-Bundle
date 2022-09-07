@@ -1,5 +1,5 @@
 "------------------------------------------------------------------------------
-"  Description: Rainbow colors for parenthsis
+"  Description: Rainbow colours for Parenthsis
 "    Copyright: Copyright (C) 2007 … 2022  Martin Krischik
 "   Maintainer: Martin Krischik (krischik@users.sourceforge.net)
 "               John Gilmore
@@ -15,6 +15,8 @@
 "               09.10.2007 MK Now with round, square brackets, curly and angle
 "                             brackets.
 "               06.09.2022 SL Improve to handle more then 16 level
+"               07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g 
+"               07.09.2022 MK Add support for multiple colour sets. 
 "        Usage: copy to autoload directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
@@ -27,8 +29,8 @@
 
 " Section: highlight {{{1
 
-function rainbow_parenthsis#Activate()
-    if g:rainbow_parenthsis#Color_Set == "slve"
+function rainbow_parenthesis#Activate()
+    if g:rainbow_parenthesis_color_set == "slve"
         if &bg == "dark"
             highlight default hlLevel0 ctermfg=cyan        guifg=greenyellow
             highlight default hlLevel1 ctermfg=magenta     guifg=green1
@@ -67,7 +69,7 @@ function rainbow_parenthsis#Activate()
     let rainbow_parenthesis#active = 1
 endfunction
 
-function rainbow_parenthsis#Clear()
+function rainbow_parenthesis#Clear()
     let i = 0
     while i != 10
         exe 'highlight clear hlLevel' . i
@@ -76,14 +78,14 @@ function rainbow_parenthsis#Clear()
     let rainbow_parenthesis#active = 0
 endfunction
 
-function rainbow_parenthsis#Toggle ()
+function rainbow_parenthesis#Toggle ()
     if ! exists('rainbow_parenthesis#active')
-        call rainbow_parenthsis#LoadRound ()
+        call rainbow_parenthesis#LoadRound ()
     endif
     if exists('rainbow_parenthesis#active') && rainbow_parenthesis#active != 0
-        call rainbow_parenthsis#Clear ()
+        call rainbow_parenthesis#Clear ()
     else
-        call rainbow_parenthsis#Activate ()
+        call rainbow_parenthesis#Activate ()
     endif
 endfunction
 
@@ -91,7 +93,7 @@ endfunction
 "
 " Subsection: parentheses or round brackets: {{{2
 "
-function rainbow_parenthsis#LoadRound ()
+function rainbow_parenthesis#LoadRound ()
     syntax match ParenError display ')'
     syntax region Paren  transparent matchgroup=hlLevel0 start='(' end=')' contains=Paren1,TOP containedin=TOP
     syntax region Paren1 transparent matchgroup=hlLevel1 start='(' end=')' contains=Paren2,TOP
@@ -109,7 +111,7 @@ endfunction
 
 " Subsection: box brackets or square brackets: {{{2
 "
-function rainbow_parenthsis#LoadSquare ()
+function rainbow_parenthesis#LoadSquare ()
     syntax match ParenError display ']'
     syntax region Paren  transparent matchgroup=hlLevel0 start='[' end=']' contains=Paren1,TOP containedin=TOP
     syntax region Paren1 transparent matchgroup=hlLevel1 start='[' end=']' contains=Paren2
@@ -127,7 +129,7 @@ endfunction
 
 " Subsection: curly brackets or braces: {{{2
 "
-function rainbow_parenthsis#LoadBraces ()
+function rainbow_parenthesis#LoadBraces ()
     syntax match ParenError display '}'
     syntax region Paren  transparent matchgroup=hlLevel0 start='{' end='}' contains=Paren1,TOP containedin=TOP
     syntax region Paren1 transparent matchgroup=hlLevel1 start='{' end='}' contains=Paren2
@@ -145,7 +147,7 @@ endfunction
 
 " Subsection: angle brackets or chevrons: {{{2
 "
-function rainbow_parenthsis#LoadChevrons ()
+function rainbow_parenthesis#LoadChevrons ()
     syntax match ParenError display '>'
     syntax region Paren  transparent matchgroup=hlLevel0 start='<' end='>' contains=Paren1,TOP containedin=TOP
     syntax region Paren1 transparent matchgroup=hlLevel1 start='<' end='>' contains=Paren2

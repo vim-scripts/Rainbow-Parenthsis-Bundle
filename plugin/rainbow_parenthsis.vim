@@ -1,5 +1,5 @@
 "------------------------------------------------------------------------------
-"  Description: Rainbow colors for parenthsis
+"  Description: Rainbow colors for parenthesis
 "    Copyright: Copyright (C) 2006 … 2022  Martin Krischik
 "   Maintainer: Martin Krischik
 "               John Gilmore
@@ -12,6 +12,7 @@
 "                             impove memory consumtion and startup performance
 "               09.10.2007 MK Now with round, square brackets, curly and angle
 "                             brackets.
+"               07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g 
 "        Usage: copy to plugin directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
@@ -22,7 +23,7 @@
 " times.
 "------------------------------------------------------------------------------
 
-command! -nargs=0 ToggleRainbowParenthesis call rainbow_parenthsis#Toggle()
+command! -nargs=0 ToggleRainbowParenthesis call rainbow_parenthesis#Toggle()
 
 finish
 
