@@ -3,7 +3,7 @@
 "    Copyright: Copyright (C) 2006 … 2022  Martin Krischik
 "   Maintainer: Martin Krischik
 "               John Gilmore
-"      Version: 4.0
+"      Version: 5.0.0
 "      History: 24.05.2006 MK Unified Headers
 "               15.10.2006 MK Bram's suggestion for runtime integration
 "               06.09.2007 LH Buffer friendly (can be used in different buffers),
@@ -14,6 +14,7 @@
 "                             brackets.
 "               07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g 
 "               07.09.2022 MK Add Commmands for all functions
+"               09.09.2022 MK Fixes for stricter VIM
 "        Usage: copy to plugin directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
@@ -38,5 +39,5 @@ command! -nargs=0 ToggleRainbowParenthesis        call rainbow_parenthesis#Toggl
 "------------------------------------------------------------------------------
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.
 "------------------------------------------------------------------------------
-" vim: textwidth=78 wrap tabstop=8 shiftwidth=4 softtabstop=4 expandtab
-" vim: filetype=vim foldmethod=marker
+" vim: set nowrap tabstop=8 shiftwidth=3 softtabstop=3 noexpandtab textwidth=0 :
+" vim: set fileencoding=utf-8 filetype=vim foldmethod=marker spell spelllang=en_GB:

@@ -1,11 +1,11 @@
 "------------------------------------------------------------------------------
-"  Description: Rainbow colours for Parenthsis
+"  Description: Rainbow colours for parenthesis
 "    Copyright: Copyright (C) 2007 … 2022  Martin Krischik
 "   Maintainer: Martin Krischik (krischik@users.sourceforge.net)
 "               John Gilmore
 "               Luc Hermitte (hermitte@free.fr)
 "               slve (https://github.com/slve)
-"      Version: 4.0
+"      Version: 5.0.0
 "      History: 24.05.2006 MK Unified Headers
 "               15.10.2006 MK Bram's suggestion for runtime integration
 "               06.09.2007 LH Buffer friendly (can be used in different buffers),
@@ -17,6 +17,7 @@
 "               06.09.2022 SL Improve to handle more then 16 level
 "               07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g
 "               07.09.2022 MK Add support for multiple colour sets.
+"               09.09.2022 MK Fixes for stricter VIM
 "        Usage: copy to autoload directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
@@ -182,5 +183,5 @@ finish
 "------------------------------------------------------------------------------
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.
 "------------------------------------------------------------------------------
-" vim: textwidth=78 wrap tabstop=8 shiftwidth=4 softtabstop=4 expandtab
-" vim: filetype=vim foldmethod=marker
+" vim: set nowrap tabstop=8 shiftwidth=3 softtabstop=3 noexpandtab textwidth=0 :
+" vim: set fileencoding=utf-8 filetype=vim foldmethod=marker spell spelllang=en_GB:
