@@ -1,14 +1,9 @@
 "------------------------------------------------------------------------------
-"  Description: Rainbow colors for parenthsis
-"          $Id: rainbow_parenthsis.vim 29 2007-09-24 11:40:36Z krischik@users.sourceforge.net $
-"    Copyright: Copyright (C) 2006 Martin Krischik
+"  Description: Rainbow colors for parenthesis
+"    Copyright: Copyright (C) 2006 … 2022  Martin Krischik
 "   Maintainer: Martin Krischik
 "               John Gilmore
-"      $Author: krischik@users.sourceforge.net $
-"        $Date: 2007-09-24 13:40:36 +0200 (Mo, 24 Sep 2007) $
-"      Version: 4.0
-"    $Revision: 29 $
-"     $HeadURL: https://vim-scripts.googlecode.com/svn/trunk/1561%20Rainbow%20Parenthsis%20Bundle/plugin/rainbow_parenthsis.vim $
+"      Version: 5.0.0
 "      History: 24.05.2006 MK Unified Headers
 "               15.10.2006 MK Bram's suggestion for runtime integration
 "               06.09.2007 LH Buffer friendly (can be used in different buffers),
@@ -17,6 +12,9 @@
 "                             impove memory consumtion and startup performance
 "               09.10.2007 MK Now with round, square brackets, curly and angle
 "                             brackets.
+"               07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g 
+"               07.09.2022 MK Add Commmands for all functions
+"               09.09.2022 MK Fixes for stricter VIM
 "        Usage: copy to plugin directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
@@ -27,14 +25,19 @@
 " times.
 "------------------------------------------------------------------------------
 
-command! -nargs=0 ToggleRaibowParenthesis call rainbow_parenthsis#Toggle()
+command! -nargs=0 ToggleRainbowParenthesis        call rainbow_parenthesis#Toggle()
 
-finish
+" command! -nargs=0 RainbowParenthesisToggle        call rainbow_parenthesis#Toggle()
+" command! -nargs=0 RainbowParenthesisActivate      call rainbow_parenthesis#Activate()
+" command! -nargs=0 RainbowParenthesisClear         call rainbow_parenthesis#Clear()
+" command! -nargs=0 RainbowParenthesisToggle        call rainbow_parenthesis#Toggle ()
+" command! -nargs=0 RainbowParenthesisLoadRound     call rainbow_parenthesis#LoadRound ()
+" command! -nargs=0 RainbowParenthesisLoadSquare    call rainbow_parenthesis#LoadSquare ()
+" command! -nargs=0 RainbowParenthesisLoadBraces    call rainbow_parenthesis#LoadBraces ()
+" command! -nargs=0 RainbowParenthesisLoadChevrons  call rainbow_parenthesis#LoadChevrons ()
 
 "------------------------------------------------------------------------------
-"   Copyright (C) 2006  Martin Krischik
-"
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.
 "------------------------------------------------------------------------------
-" vim: textwidth=78 wrap tabstop=8 shiftwidth=4 softtabstop=4 expandtab
-" vim: filetype=vim foldmethod=marker
+" vim: set nowrap tabstop=8 shiftwidth=3 softtabstop=3 noexpandtab textwidth=0 :
+" vim: set fileencoding=utf-8 filetype=vim foldmethod=marker spell spelllang=en_GB:
