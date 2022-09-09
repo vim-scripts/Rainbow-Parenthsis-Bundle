@@ -16,14 +16,22 @@ Discuss improvements on: https://github.com/krischik/Rainbow-Parenthesis-Bundle/
 
 # slve improvements
 
+My technique only worked up to 15 level. Which is isn't any good for languages like
+lisp. slve fixed this with a recursive solution. Very need.
+
 ## before
 
-![before](before.png)
+![before](Pictures/before.png)
 
 ## after
 
-![after](after.png)
+![after](Pictures/after.png)
 
 # krischik improvements
 
+Vim got a little scricter on syntax highlights and some of slve tricks didn't work
+any more so fixing was needed.
 
+## fixed
+
+<img src="Pictures/fixed.png"  width="1060">
