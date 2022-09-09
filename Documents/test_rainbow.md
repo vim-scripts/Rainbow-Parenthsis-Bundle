@@ -90,4 +90,4 @@
    ([{<([{<([{<([{<([{<([{<([{<([{<([{<([{<([{<([{<([{<([{<([{<([{<>}])>}])>}])>}])>}])>}])>}])>}])>}])>}])>}])>}])>}])>}])>}])>}])
 
 
-# vim: nocursorcolumn nocursorline
+# vim: nocursorcolumn nocursorline nofoldenable

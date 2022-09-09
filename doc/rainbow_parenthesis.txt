@@ -3,9 +3,10 @@
 Author: Martin Krischik (krischik@users.sourceforge.net)
 	John Gilmore
 	Luc Hermitte (hermitte@free.fr)
+	slve (https://github.com/slve)
 
 For Vim version 7.0 and above
-Last change: 09 Oct, 2007
+Last change: 09 Sep, 2022
 
 1. Overview					|rainbow_parenthesis-about|
 2. Commands					|rainbow_parenthesis-commands|
@@ -16,9 +17,9 @@ Last change: 09 Oct, 2007
 						    *rainbow_parenthesis-about*
 1. Overview~
 
-rainbow_parenthesis allows you to view the contents of a file in real time.  When a
-change in the file is detected, the window displaying the file is updated and
-repositioned to the last line.
+rainbow_parenthesis allows you to view the contents of a file in real time.
+When a change in the file is detected, the window displaying the file is
+updated and repositioned to the last line.
 
 The update is not exactly real time, but usually updates within a few seconds
 of the file change.  The update interval of the output is determined by the
@@ -33,8 +34,8 @@ commands.  For more information, see |preview-window|.
 						 *rainbow_parenthesis-commands*
 2. Commands~
 
-The rainbow_parenthesis plugin does not create any automatic mappings, but provides the
-following commands:
+The rainbow_parenthesis plugin does not create any automatic mappings, but
+provides the following commands:
 
 						    *:ToggleRainbowParenthesis*
 |:ToggleRainbowParenthesis|
@@ -45,7 +46,7 @@ following commands:
 						*rainbow_parenthesis-functions*
 2. Functions~
 
-|rainbow_parenthesis#Activate()|			*rainbow_parenthesis#Activate()*
+|rainbow_parenthesis#Activate()|	       *rainbow_parenthesis#Activate()*
 	Activate the loaded parenthesis
 
 |rainbow_parenthesis#Clear()|			   *rainbow_parenthesis#Clear()*
@@ -69,8 +70,23 @@ following commands:
 	Load syntax for angle brackets or chevrons '<' '>'
 
 ==============================================================================
+3. Options ~
+						   *rainbow-parenthesis-options*
+
+					       *g:rainbow_parenthesis_color_set*
+g:rainbow_parenthesis_color_set	enum ('krischik', 'slve' …)
+
+	Used to change the colour sets. The sets are named after the git
+	handle of the respective maintainer.
+
+	Available are: 'krischik', 'slve'
+
+	The default set is 'krischik'. The 'slve' set has a dark and light
+	variant.
+
+==============================================================================
 						 *rainbow_parenthesis-configure*
-3. Configuration~
+4. Configuration~
 
 The best way to use rainbow_parenthesis is to add it to syntax plug-in of any
 file type used:
@@ -84,20 +100,5 @@ file type used:
 This way you don't need to load all options available but only those which
 are of importance to the actual file types.
 
-------------------------------------------------------------------------------
-2.1 Options ~
-						  rainbow-parenthesis-options*
-
-					      *g:rainbow_parenthesis_color_set*
-g:rainbow_parenthesis_color_set	enum ('krischik', 'slve' …)
-
-		Used to change the colour sets. The sets are named after
-		the git handle of the respective maintainer.
-
-		Available are: 'krischik', 'slve'
-
-		The default set is 'krischik'. The 'slve' set has a dark and
-		light variant.
-
 ==============================================================================
-vim:textwidth=78:tabstop=8:noexpandtab:filetype=help
+vim:textwidth=78:tabstop=8:noexpandtab:filetype=help spell spelllang=en_gb

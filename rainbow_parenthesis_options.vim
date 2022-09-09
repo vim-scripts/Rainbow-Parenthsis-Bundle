@@ -19,7 +19,7 @@ finish " 1}}}
 
 " Section: rainbow_parenthesis options {{{1
 
-   let   g:ada_abbrev		       = "default"
+   let   g:rainbow_parenthesis_color_set  = "krischik"
 
 " }}}1
 
