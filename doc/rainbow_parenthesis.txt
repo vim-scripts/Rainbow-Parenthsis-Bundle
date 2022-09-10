@@ -4,9 +4,10 @@ Author: Martin Krischik (krischik@users.sourceforge.net)
 	John Gilmore
 	Luc Hermitte (hermitte@free.fr)
 	slve (https://github.com/slve)
+	Βασίλης (https://github.com/autre)
 
 For Vim version 7.0 and above
-Last change: 09 Sep, 2022
+Last change: 10 Sep, 2022
 
 1. Overview					|rainbow_parenthesis-about|
 2. Commands					|rainbow_parenthesis-commands|
