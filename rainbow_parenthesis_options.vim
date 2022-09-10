@@ -2,7 +2,7 @@
 "  Description: Options settable by the rainbow_parenthesis plug-in
 "    Copyright: Copyright (C) 2006 … 2022 Martin Krischik
 "   Maintainer:	Martin Krischik (krischik@users.sourceforge.net)
-"      Version: 5.0.0
+"      Version: 5.1.0
 "      History:	17.11.2006 MK rainbow_parenthesis_Options
 "		01.01.2007 MK Bug fixing
 "               09.10.2007 MK Now with round, square brackets, curly and angle
@@ -66,5 +66,5 @@ git mv rainbow_parenthsis_options.vim   rainbow_parenthesis_options.vim
 "------------------------------------------------------------------------------
 "   Vim is Charityware - see ":help license" or uganda.txt for licence.
 "------------------------------------------------------------------------------
-" vim: set nowrap tabstop=8 shiftwidth=3 softtabstop=3 noexpandtab textwidth=0 :
-" vim: set fileencoding=utf-8 filetype=vim foldmethod=marker spell spelllang=en_GB:
+" vim: set nowrap tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab textwidth=0 :
+" vim: set fileencoding=utf-8 filetype=vim foldmethod=marker spell spelllang=en_gb:
