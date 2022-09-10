@@ -3,7 +3,7 @@
 "    Copyright: Copyright (C) 2006 … 2022  Martin Krischik
 "   Maintainer: Martin Krischik
 "               John Gilmore
-"      Version: 5.0.0
+"      Version: 5.1.0
 "      History: 24.05.2006 MK Unified Headers
 "               15.10.2006 MK Bram's suggestion for runtime integration
 "               06.09.2007 LH Buffer friendly (can be used in different buffers),
@@ -18,7 +18,7 @@
 "        Usage: copy to plugin directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
-" highlight each matching set of parens in different colors, to make
+" highlight each matching set of parenthesis in different colours, to make
 " it visually obvious what matches which.
 "
 " Obviously, most useful when working with lisp or Ada. But it's also nice other
@@ -39,5 +39,5 @@ command! -nargs=0 ToggleRainbowParenthesis        call rainbow_parenthesis#Toggl
 "------------------------------------------------------------------------------
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.
 "------------------------------------------------------------------------------
-" vim: set nowrap tabstop=8 shiftwidth=3 softtabstop=3 noexpandtab textwidth=0 :
-" vim: set fileencoding=utf-8 filetype=vim foldmethod=marker spell spelllang=en_GB:
+" vim: set nowrap tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab textwidth=0 :
+" vim: set fileencoding=utf-8 filetype=vim foldmethod=marker spell spelllang=en_gb:
