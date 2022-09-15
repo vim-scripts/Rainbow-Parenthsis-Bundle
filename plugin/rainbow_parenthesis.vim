@@ -3,7 +3,7 @@
 "    Copyright: Copyright (C) 2006 … 2022  Martin Krischik
 "   Maintainer: Martin Krischik
 "               John Gilmore
-"      Version: 5.1.0
+"      Version: 5.2.0
 "      History: 24.05.2006 MK Unified Headers
 "               15.10.2006 MK Bram's suggestion for runtime integration
 "               06.09.2007 LH Buffer friendly (can be used in different buffers),
@@ -35,6 +35,8 @@ command! -nargs=0 ToggleRainbowParenthesis        call rainbow_parenthesis#Toggl
 " command! -nargs=0 RainbowParenthesisLoadSquare    call rainbow_parenthesis#LoadSquare ()
 " command! -nargs=0 RainbowParenthesisLoadBraces    call rainbow_parenthesis#LoadBraces ()
 " command! -nargs=0 RainbowParenthesisLoadChevrons  call rainbow_parenthesis#LoadChevrons ()
+
+finish
 
 "------------------------------------------------------------------------------
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.

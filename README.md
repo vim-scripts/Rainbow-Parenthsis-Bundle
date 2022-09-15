@@ -33,6 +33,11 @@ My technique only worked up to 15 level. Which is isn't any good for languages
 This fork provides for a small fix to the plugin. It also customizes the parentheses colors
 for a dark background.
 
+# charlietanksley improvements
+
+Fork of original.  Forked primarily to remove the background color on the
+syntax highlighting.
+
 # krischik improvements
 
 Vim got a little scricter on syntax highlights and some of slve tricks didn't

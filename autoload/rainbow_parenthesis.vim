@@ -6,7 +6,8 @@
 "		Luc Hermitte (hermitte@free.fr)
 "		slve (https://github.com/slve)
 "		Βασίλης (https://github.com/autre)
-"      Version: 5.1.0
+"		Charlie Tanksley (charlie.tanksley@gmail.com)
+"      Version: 5.2.0
 "      History: 24.05.2006 MK Unified Headers
 "		15.10.2006 MK Bram's suggestion for runtime integration
 "		06.09.2007 LH Buffer friendly (can be used in different buffers),
@@ -23,6 +24,7 @@
 "		10.09.2022 AU A dark colour scheme.
 "		10.09.2022 AU simpler approach to the handling of 
 "		              rainbow_parenthesis#active 
+"		15.09.2022 CT colour scheme without background colour 
 "	 Usage: copy to autoload directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
@@ -75,6 +77,17 @@ function rainbow_parenthesis#Activate()
 	highlight default hlLevel7 ctermfg=brown	guifg=orange1
 	highlight default hlLevel8 ctermfg=Darkblue	guifg=yellow1
 	highlight default hlLevel9 ctermfg=darkgray	guifg=greenyellow
+    elseif g:rainbow_parenthesis_color_set == "charlietanksley"
+	highlight default hlLevel0 ctermfg=brown        guifg=RoyalBlue3
+	highlight default hlLevel1 ctermfg=Darkblue     guifg=SeaGreen3
+	highlight default hlLevel2 ctermfg=darkgray     guifg=DarkOrchid3
+	highlight default hlLevel3 ctermfg=darkgreen    guifg=firebrick3
+	highlight default hlLevel4 ctermfg=darkcyan     guifg=RoyalBlue3
+	highlight default hlLevel5 ctermfg=darkred      guifg=SeaGreen3
+	highlight default hlLevel6 ctermfg=darkmagenta  guifg=DarkOrchid3
+	highlight default hlLevel7 ctermfg=brown        guifg=firebrick3
+	highlight default hlLevel8 ctermfg=gray         guifg=RoyalBlue3
+	highlight default hlLevel9 ctermfg=black        guifg=SeaGreen3
     else
 	highlight default hlLevel0 ctermbg=LightGray ctermfg=brown	  guibg=WhiteSmoke   guifg=RoyalBlue3
 	highlight default hlLevel1 ctermbg=LightGray ctermfg=Darkblue	  guibg=WhiteSmoke   guifg=SeaGreen3
