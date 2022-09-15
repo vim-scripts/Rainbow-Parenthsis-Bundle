@@ -36,6 +36,8 @@ command! -nargs=0 ToggleRainbowParenthesis        call rainbow_parenthesis#Toggl
 " command! -nargs=0 RainbowParenthesisLoadBraces    call rainbow_parenthesis#LoadBraces ()
 " command! -nargs=0 RainbowParenthesisLoadChevrons  call rainbow_parenthesis#LoadChevrons ()
 
+finish
+
 "------------------------------------------------------------------------------
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.
 "------------------------------------------------------------------------------
