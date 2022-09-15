@@ -2,7 +2,7 @@
 "  Description: Options settable by the rainbow_parenthesis plug-in
 "    Copyright: Copyright (C) 2006 … 2022 Martin Krischik
 "   Maintainer:	Martin Krischik (krischik@users.sourceforge.net)
-"      Version: 5.1.0
+"      Version: 5.2.0
 "      History:	17.11.2006 MK rainbow_parenthesis_Options
 "		01.01.2007 MK Bug fixing
 "               09.10.2007 MK Now with round, square brackets, curly and angle

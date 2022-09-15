@@ -7,7 +7,7 @@
 "		slve (https://github.com/slve)
 "		Βασίλης (https://github.com/autre)
 "		Charlie Tanksley (charlie.tanksley@gmail.com)
-"      Version: 5.1.0
+"      Version: 5.2.0
 "      History: 24.05.2006 MK Unified Headers
 "		15.10.2006 MK Bram's suggestion for runtime integration
 "		06.09.2007 LH Buffer friendly (can be used in different buffers),
