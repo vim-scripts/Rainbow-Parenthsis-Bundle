@@ -6,6 +6,7 @@ Author: Martin Krischik (krischik@users.sourceforge.net)
 	slve (https://github.com/slve)
 	Βασίλης (https://github.com/autre)
 	Charlie Tanksley (charlie.tanksley@gmail.com)
+	Jonathan Wilkins (https://github.com/jwilkins)
 
 For Vim version 7.0 and above
 Last change: 10 Sep, 2022
