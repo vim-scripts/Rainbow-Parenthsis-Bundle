@@ -8,7 +8,7 @@
 "		Βασίλης (https://github.com/autre)
 "		Charlie Tanksley (charlie.tanksley@gmail.com)
 "		Jonathan Wilkins (https://github.com/jwilkins)
-"      Version: 5.2.0
+"      Version: 5.3.0
 "      History: 24.05.2006 MK Unified Headers
 "		15.10.2006 MK Bram's suggestion for runtime integration
 "		06.09.2007 LH Buffer friendly (can be used in different buffers),
@@ -23,9 +23,9 @@
 "		07.09.2022 MK Add support for multiple colour sets.
 "		09.09.2022 MK Fixes for stricter VIM
 "		10.09.2022 AU A dark colour scheme.
-"		10.09.2022 AU simpler approach to the handling of 
-"			      rainbow_parenthesis#active 
-"		15.09.2022 CT colour scheme without background colour 
+"		10.09.2022 AU simpler approach to the handling of
+"			      rainbow_parenthesis#active
+"		15.09.2022 CT colour scheme without background colour
 "		17.09.2022 JW colour scheme without terminal background colour
 "	 Usage: copy to autoload directory.
 "------------------------------------------------------------------------------

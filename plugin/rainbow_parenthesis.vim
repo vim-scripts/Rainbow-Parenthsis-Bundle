@@ -3,7 +3,7 @@
 "    Copyright: Copyright (C) 2006 … 2022  Martin Krischik
 "   Maintainer: Martin Krischik
 "               John Gilmore
-"      Version: 5.2.0
+"      Version: 5.3.0
 "      History: 24.05.2006 MK Unified Headers
 "               15.10.2006 MK Bram's suggestion for runtime integration
 "               06.09.2007 LH Buffer friendly (can be used in different buffers),
@@ -12,7 +12,7 @@
 "                             impove memory consumtion and startup performance
 "               09.10.2007 MK Now with round, square brackets, curly and angle
 "                             brackets.
-"               07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g 
+"               07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g
 "               07.09.2022 MK Add Commmands for all functions
 "               09.09.2022 MK Fixes for stricter VIM
 "        Usage: copy to plugin directory.
