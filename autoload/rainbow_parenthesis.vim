@@ -7,6 +7,7 @@
 "		slve (https://github.com/slve)
 "		Βασίλης (https://github.com/autre)
 "		Charlie Tanksley (charlie.tanksley@gmail.com)
+"		Jonathan Wilkins (https://github.com/jwilkins)
 "      Version: 5.2.0
 "      History: 24.05.2006 MK Unified Headers
 "		15.10.2006 MK Bram's suggestion for runtime integration
@@ -17,14 +18,15 @@
 "		09.10.2007 MK Now with round, square brackets, curly and angle
 "			      brackets.
 "		06.09.2022 SL Improve to handle more then 16 level aw well as
-"		              reducing to 10 distinct level.
+"			      reducing to 10 distinct level.
 "		07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g
 "		07.09.2022 MK Add support for multiple colour sets.
 "		09.09.2022 MK Fixes for stricter VIM
 "		10.09.2022 AU A dark colour scheme.
 "		10.09.2022 AU simpler approach to the handling of 
-"		              rainbow_parenthesis#active 
+"			      rainbow_parenthesis#active 
 "		15.09.2022 CT colour scheme without background colour 
+"		17.09.2022 JW colour scheme without terminal background colour
 "	 Usage: copy to autoload directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
@@ -44,61 +46,72 @@ function rainbow_parenthesis#Activate()
 
     if g:rainbow_parenthesis_color_set == "slve"
 	if &bg == "dark"
-	    highlight default hlLevel0 ctermfg=cyan	   guifg=greenyellow
-	    highlight default hlLevel1 ctermfg=magenta	   guifg=green1
-	    highlight default hlLevel2 ctermfg=red	   guifg=springgreen1
-	    highlight default hlLevel3 ctermfg=yellow	   guifg=cyan1
-	    highlight default hlLevel4 ctermfg=green	   guifg=slateblue1
-	    highlight default hlLevel5 ctermfg=cyan	   guifg=magenta1
-	    highlight default hlLevel6 ctermfg=magenta	   guifg=purple1
-	    highlight default hlLevel7 ctermfg=red	   guifg=red1
-	    highlight default hlLevel8 ctermfg=yellow	   guifg=orange1
-	    highlight default hlLevel9 ctermfg=green	   guifg=yellow1
+	    highlight default hlLevel0			ctermfg=cyan				guifg=greenyellow
+	    highlight default hlLevel1			ctermfg=magenta				guifg=green1
+	    highlight default hlLevel2			ctermfg=red				guifg=springgreen1
+	    highlight default hlLevel3			ctermfg=yellow				guifg=cyan1
+	    highlight default hlLevel4			ctermfg=green				guifg=slateblue1
+	    highlight default hlLevel5			ctermfg=cyan				guifg=magenta1
+	    highlight default hlLevel6			ctermfg=magenta				guifg=purple1
+	    highlight default hlLevel7			ctermfg=red				guifg=red1
+	    highlight default hlLevel8			ctermfg=yellow				guifg=orange1
+	    highlight default hlLevel9			ctermfg=green				guifg=yellow1
 	else
-	    highlight default hlLevel0 ctermfg=blue	   guifg=yellow3
-	    highlight default hlLevel1 ctermfg=darkmagenta guifg=olivedrab4
-	    highlight default hlLevel2 ctermfg=red	   guifg=green4
-	    highlight default hlLevel3 ctermfg=darkyellow  guifg=paleturquoise3
-	    highlight default hlLevel4 ctermfg=darkgreen   guifg=deepskyblue4
-	    highlight default hlLevel5 ctermfg=blue	   guifg=darkslateblue
-	    highlight default hlLevel6 ctermfg=darkmagenta guifg=darkviolet
-	    highlight default hlLevel7 ctermfg=red	   guifg=red3
-	    highlight default hlLevel8 ctermfg=darkyellow  guifg=orangered3
-	    highlight default hlLevel9 ctermfg=darkgreen   guifg=orange2
+	    highlight default hlLevel0			ctermfg=blue				guifg=yellow3
+	    highlight default hlLevel1			ctermfg=darkmagenta			guifg=olivedrab4
+	    highlight default hlLevel2			ctermfg=red				guifg=green4
+	    highlight default hlLevel3			ctermfg=darkyellow			guifg=paleturquoise3
+	    highlight default hlLevel4			ctermfg=darkgreen			guifg=deepskyblue4
+	    highlight default hlLevel5			ctermfg=blue				guifg=darkslateblue
+	    highlight default hlLevel6			ctermfg=darkmagenta			guifg=darkviolet
+	    highlight default hlLevel7			ctermfg=red				guifg=red3
+	    highlight default hlLevel8			ctermfg=darkyellow			guifg=orangered3
+	    highlight default hlLevel9			ctermfg=darkgreen			guifg=orange2
 	endif
     elseif g:rainbow_parenthesis_color_set == "autre"
-	highlight default hlLevel0 ctermfg=brown	guifg=RoyalBlue3
-	highlight default hlLevel1 ctermfg=Darkblue	guifg=SeaGreen3
-	highlight default hlLevel2 ctermfg=darkgray	guifg=DarkOrchid3
-	highlight default hlLevel3 ctermfg=darkgreen	guifg=firebrick3
-	highlight default hlLevel4 ctermfg=darkcyan	guifg=RoyalBlue3
-	highlight default hlLevel5 ctermfg=darkred	guifg=SeaGreen3
-	highlight default hlLevel6 ctermfg=darkmagenta  guifg=DarkOrchid3
-	highlight default hlLevel7 ctermfg=brown	guifg=orange1
-	highlight default hlLevel8 ctermfg=Darkblue	guifg=yellow1
-	highlight default hlLevel9 ctermfg=darkgray	guifg=greenyellow
+	highlight default hlLevel0			ctermfg=brown				guifg=RoyalBlue3
+	highlight default hlLevel1			ctermfg=Darkblue			guifg=SeaGreen3
+	highlight default hlLevel2			ctermfg=darkgray			guifg=DarkOrchid3
+	highlight default hlLevel3			ctermfg=darkgreen			guifg=firebrick3
+	highlight default hlLevel4			ctermfg=darkcyan			guifg=RoyalBlue3
+	highlight default hlLevel5			ctermfg=darkred				guifg=SeaGreen3
+	highlight default hlLevel6			ctermfg=darkmagenta			guifg=DarkOrchid3
+	highlight default hlLevel7			ctermfg=brown				guifg=orange1
+	highlight default hlLevel8			ctermfg=Darkblue			guifg=yellow1
+	highlight default hlLevel9			ctermfg=darkgray			guifg=greenyellow
     elseif g:rainbow_parenthesis_color_set == "charlietanksley"
-	highlight default hlLevel0 ctermfg=brown        guifg=RoyalBlue3
-	highlight default hlLevel1 ctermfg=Darkblue     guifg=SeaGreen3
-	highlight default hlLevel2 ctermfg=darkgray     guifg=DarkOrchid3
-	highlight default hlLevel3 ctermfg=darkgreen    guifg=firebrick3
-	highlight default hlLevel4 ctermfg=darkcyan     guifg=RoyalBlue3
-	highlight default hlLevel5 ctermfg=darkred      guifg=SeaGreen3
-	highlight default hlLevel6 ctermfg=darkmagenta  guifg=DarkOrchid3
-	highlight default hlLevel7 ctermfg=brown        guifg=firebrick3
-	highlight default hlLevel8 ctermfg=gray         guifg=RoyalBlue3
-	highlight default hlLevel9 ctermfg=black        guifg=SeaGreen3
+	highlight default hlLevel0			ctermfg=brown				guifg=RoyalBlue3
+	highlight default hlLevel1			ctermfg=Darkblue			guifg=SeaGreen3
+	highlight default hlLevel2			ctermfg=darkgray			guifg=DarkOrchid3
+	highlight default hlLevel3			ctermfg=darkgreen			guifg=firebrick3
+	highlight default hlLevel4			ctermfg=darkcyan			guifg=RoyalBlue3
+	highlight default hlLevel5			ctermfg=darkred				guifg=SeaGreen3
+	highlight default hlLevel6			ctermfg=darkmagenta			guifg=DarkOrchid3
+	highlight default hlLevel7			ctermfg=brown				guifg=firebrick3
+	highlight default hlLevel8			ctermfg=gray				guifg=RoyalBlue3
+	highlight default hlLevel9			ctermfg=black				guifg=SeaGreen3
+    elseif g:rainbow_parenthesis_color_set == "jwilkins"
+	highlight default hlLevel0			ctermfg=brown	    guibg=WhiteSmoke	guifg=RoyalBlue3
+	highlight default hlLevel1			ctermfg=Darkblue    guibg=WhiteSmoke	guifg=SeaGreen3
+	highlight default hlLevel2			ctermfg=darkgray    guibg=WhiteSmoke	guifg=DarkOrchid3
+	highlight default hlLevel3			ctermfg=darkgreen   guibg=WhiteSmoke	guifg=firebrick3
+	highlight default hlLevel4			ctermfg=darkcyan    guibg=AntiqueWhite	guifg=RoyalBlue3
+	highlight default hlLevel5			ctermfg=darkred     guibg=AntiqueWhite	guifg=SeaGreen3
+	highlight default hlLevel6			ctermfg=darkmagenta guibg=AntiqueWhite	guifg=DarkOrchid3
+	highlight default hlLevel7			ctermfg=brown	    guibg=AntiqueWhite	guifg=firebrick3
+	highlight default hlLevel8			ctermfg=gray	    guibg=LemonChiffon	guifg=RoyalBlue3
+	highlight default hlLevel9			ctermfg=black	    guibg=LemonChiffon	guifg=SeaGreen3
     else
-	highlight default hlLevel0 ctermbg=LightGray ctermfg=brown	  guibg=WhiteSmoke   guifg=RoyalBlue3
-	highlight default hlLevel1 ctermbg=LightGray ctermfg=Darkblue	  guibg=WhiteSmoke   guifg=SeaGreen3
-	highlight default hlLevel2 ctermbg=LightGray ctermfg=darkgray	  guibg=WhiteSmoke   guifg=DarkOrchid3
-	highlight default hlLevel3 ctermbg=LightGray ctermfg=darkgreen	  guibg=WhiteSmoke   guifg=firebrick3
-	highlight default hlLevel4 ctermbg=LightGray ctermfg=darkcyan	  guibg=AntiqueWhite guifg=RoyalBlue3
-	highlight default hlLevel5 ctermbg=LightGray ctermfg=darkred	  guibg=AntiqueWhite guifg=SeaGreen3
-	highlight default hlLevel6 ctermbg=LightGray ctermfg=darkmagenta  guibg=AntiqueWhite guifg=DarkOrchid3
-	highlight default hlLevel7 ctermbg=LightGray ctermfg=brown	  guibg=AntiqueWhite guifg=firebrick3
-	highlight default hlLevel8 ctermbg=LightGray ctermfg=gray	  guibg=LemonChiffon guifg=RoyalBlue3
-	highlight default hlLevel9 ctermbg=LightGray ctermfg=black	  guibg=LemonChiffon guifg=SeaGreen3
+	highlight default hlLevel0 ctermbg=LightGray	ctermfg=brown	    guibg=WhiteSmoke	guifg=RoyalBlue3
+	highlight default hlLevel1 ctermbg=LightGray	ctermfg=Darkblue    guibg=WhiteSmoke	guifg=SeaGreen3
+	highlight default hlLevel2 ctermbg=LightGray	ctermfg=darkgray    guibg=WhiteSmoke	guifg=DarkOrchid3
+	highlight default hlLevel3 ctermbg=LightGray	ctermfg=darkgreen   guibg=WhiteSmoke	guifg=firebrick3
+	highlight default hlLevel4 ctermbg=LightGray	ctermfg=darkcyan    guibg=AntiqueWhite	guifg=RoyalBlue3
+	highlight default hlLevel5 ctermbg=LightGray	ctermfg=darkred	    guibg=AntiqueWhite	guifg=SeaGreen3
+	highlight default hlLevel6 ctermbg=LightGray	ctermfg=darkmagenta guibg=AntiqueWhite	guifg=DarkOrchid3
+	highlight default hlLevel7 ctermbg=LightGray	ctermfg=brown	    guibg=AntiqueWhite	guifg=firebrick3
+	highlight default hlLevel8 ctermbg=LightGray	ctermfg=gray	    guibg=LemonChiffon	guifg=RoyalBlue3
+	highlight default hlLevel9 ctermbg=LightGray	ctermfg=black	    guibg=LemonChiffon	guifg=SeaGreen3
     endif
 
     syntax cluster rainbow_parenthesis contains=hlLevel0,hlLevel1,hlLevel2,hlLevel3,hlLevel4,hlLevel5,hlLevel6,hlLevel7,hlLevel8,hlLevel9
@@ -118,7 +131,7 @@ endfunction
 function rainbow_parenthesis#Toggle ()
     if ! exists('rainbow_parenthesis#active')
 	call rainbow_parenthesis#LoadRound ()
-        let rainbow_parenthesis#active = 0
+	let rainbow_parenthesis#active = 0
     endif
     if rainbow_parenthesis#active != 0
 	call rainbow_parenthesis#Clear ()
