@@ -2,7 +2,7 @@
 "  Description: Options settable by the rainbow_parenthesis plug-in
 "    Copyright: Copyright (C) 2006 … 2022 Martin Krischik
 "   Maintainer:	Martin Krischik (krischik@users.sourceforge.net)
-"      Version: 5.3.0
+"      Version: 5.4
 "      History:	17.11.2006 MK rainbow_parenthesis_Options
 "		01.01.2007 MK Bug fixing
 "               09.10.2007 MK Now with round, square brackets, curly and angle
@@ -10,6 +10,7 @@
 "               06.09.2022 MK Add colour sce
 "               07.09.2022 MK Fix spelling mistake s/parenthesis/parenthesis/g
 "               09.09.2022 MK Fixes for stricter VIM
+"               18.09.2022 MK update quick installation
 "	 Usage: copy content into your .vimrc and change options to your
 "		liking.
 "    Help Page: rainbow_parenthesis.txt

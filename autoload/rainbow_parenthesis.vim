@@ -8,7 +8,7 @@
 "		Βασίλης (https://github.com/autre)
 "		Charlie Tanksley (charlie.tanksley@gmail.com)
 "		Jonathan Wilkins (https://github.com/jwilkins)
-"      Version: 5.3.0
+"      Version: 5.4
 "      History: 24.05.2006 MK Unified Headers
 "		15.10.2006 MK Bram's suggestion for runtime integration
 "		06.09.2007 LH Buffer friendly (can be used in different buffers),
@@ -27,7 +27,7 @@
 "			      rainbow_parenthesis#active
 "		15.09.2022 CT colour scheme without background colour
 "		17.09.2022 JW colour scheme without terminal background colour
-"		19.09.2022 MK return to 16 highlight level as most colour
+"		18.09.2022 MK return to 16 highlight level as most colour
 "			      schema are made for multiples of 4.
 "	 Usage: copy to autoload directory.
 "------------------------------------------------------------------------------
