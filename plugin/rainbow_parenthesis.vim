@@ -3,7 +3,7 @@
 "    Copyright: Copyright (C) 2006 … 2022  Martin Krischik
 "   Maintainer: Martin Krischik
 "               John Gilmore
-"      Version: 5.3.0
+"      Version: 5.4
 "      History: 24.05.2006 MK Unified Headers
 "               15.10.2006 MK Bram's suggestion for runtime integration
 "               06.09.2007 LH Buffer friendly (can be used in different buffers),
@@ -15,7 +15,7 @@
 "               07.09.2022 MK Fix spelling mistake s/parenthsis/parenthesis/g
 "               07.09.2022 MK Add commands for all functions
 "               09.09.2022 MK Fixes for stricter VIM
-"               17.09.2022 MK Option to add all commands
+"               18.09.2022 MK Option to add all commands
 "        Usage: copy to plugin directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to

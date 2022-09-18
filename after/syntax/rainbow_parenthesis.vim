@@ -3,7 +3,7 @@
 "    Copyright: Copyright (C) 2006 … 2022  Martin Krischik
 "   Maintainer: Martin Krischik
 "               John Gilmore
-"      Version: 5.3.0
+"      Version: 5.4
 "      History: 18.09.2022 MK add after syntax file 
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
