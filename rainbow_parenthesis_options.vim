@@ -21,7 +21,7 @@ finish " 1}}}
 " Section: rainbow_parenthesis options {{{1
 
    let   g:rainbow_parenthesis_color_set  = "krischik"
-
+   let   g:rainbow_parenthesis_commands	  = "1"
 " }}}1
 
 " Section: Vimball options {{{1
@@ -48,18 +48,11 @@ tar --create --bzip2				\
 
 " Section: Quick Installation {{{1
 
-gcp --verbose --update autoload/rainbow_parenthesis.vim  ~/vimfiles/autoload/rainbow_parenthesis.vim
-gcp --verbose --update doc/rainbow_parenthesis.txt       ~/vimfiles/doc/rainbow_parenthesis.txt
-gcp --verbose --update plugin/rainbow_parenthesis.vim    ~/vimfiles/plugin/rainbow_parenthesis.vim
-gcp --verbose --update rainbow_parenthesis_options.vim   ~/vimfiles/rainbow_parenthesis_options.vim
-
-git mv autoload/rainbow_parenthsis.vim  autoload/rainbow_parenthesis.vim
-git mv doc/rainbow_parenthsis.txt       doc/rainbow_parenthesis.txt
-git mv plugin/rainbow_parenthsis.vim    plugin/rainbow_parenthesis.vim
-git mv rainbow_parenthsis_options.vim   rainbow_parenthesis_options.vim
-
-%s /\Vparenthsis/parenthesis/g
-%s /\VParenthsis/Parenthesis/g
+gcp --verbose --update after/syntax/rainbow_parenthesis.vim ~/vimfiles/bundles/.cache/.vimrc/.dein/after/syntax/rainbow_parenthesis.vim
+gcp --verbose --update autoload/rainbow_parenthesis.vim	    ~/vimfiles/bundles/.cache/.vimrc/.dein/autoload/rainbow_parenthesis.vim
+gcp --verbose --update doc/rainbow_parenthesis.txt          ~/vimfiles/bundles/.cache/.vimrc/.dein/doc/rainbow_parenthesis.txt
+gcp --verbose --update plugin/rainbow_parenthesis.vim       ~/vimfiles/bundles/.cache/.vimrc/.dein/plugin/rainbow_parenthesis.vim
+gcp --verbose --update rainbow_parenthesis_options.vim      ~/vimfiles/bundles/.cache/.vimrc/.dein/rainbow_parenthesis_options.vim
 
 " }}}1
 
