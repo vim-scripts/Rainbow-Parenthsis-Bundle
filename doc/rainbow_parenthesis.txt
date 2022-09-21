@@ -1,0 +1,107 @@
+*rainbow_parenthesis.txt*	   Colorize Parenthesis
+
+Author: Martin Krischik (krischik@users.sourceforge.net)
+	John Gilmore
+	Luc Hermitte (hermitte@free.fr)
+	slve (https://github.com/slve)
+	Βασίλης (https://github.com/autre)
+	Charlie Tanksley (charlie.tanksley@gmail.com)
+	Jonathan Wilkins (https://github.com/jwilkins)
+
+For Vim version 7.0 and above
+Last change: 10 Sep, 2022
+
+1. Overview					|rainbow_parenthesis-about|
+2. Commands					|rainbow_parenthesis-commands|
+2. Functions					|rainbow_parenthesis-functions|
+3. Configuration				|rainbow_parenthesis-configure|
+
+==============================================================================
+						    *rainbow_parenthesis-about*
+1. Overview~
+
+rainbow_parenthesis allows you to view the contents of a file in real time.
+When a change in the file is detected, the window displaying the file is
+updated and repositioned to the last line.
+
+The update is not exactly real time, but usually updates within a few seconds
+of the file change.  The update interval of the output is determined by the
+|updatetime| parameter, along with continued usage of Vim.  This means that if
+you are not doing any editing or motion commands, the preview window will not
+be updated.  See |CursorHold| for more information.
+
+Because this window becomes the preview window, it will accept all related
+commands.  For more information, see |preview-window|.
+
+==============================================================================
+						 *rainbow_parenthesis-commands*
+2. Commands~
+
+The rainbow_parenthesis plugin does not create any automatic mappings, but
+provides the following commands:
+
+						    *:ToggleRainbowParenthesis*
+|:ToggleRainbowParenthesis|
+	Manually start rainbow parenthesis.. If no bracket type has been loaded
+	yet then round brackets will be loaded by default.
+
+==============================================================================
+						*rainbow_parenthesis-functions*
+2. Functions~
+
+|rainbow_parenthesis#Activate()|	       *rainbow_parenthesis#Activate()*
+	Activate the loaded parenthesis
+
+|rainbow_parenthesis#Clear()|			   *rainbow_parenthesis#Clear()*
+	Deactivate rainbow parenthesis
+
+|rainbow_parenthesis#Toggle()|			  *rainbow_parenthesis#Toggle()*
+	Toggles rainbow parenthesis status. If no bracket type has been loaded
+	yet then round brackets will be loaded.
+
+|rainbow_parenthesis#LoadRound()|	       *rainbow_parenthesis#LoadRound()*
+	Load syntax for parenthesis or round brackets '(' ')' - This will be
+	loaded by default if nothing else has been loaded.
+
+|rainbow_parenthesis#LoadSquare()|	      *rainbow_parenthesis#LoadSquare()*
+	Load syntax for box brackets or square brackets '[' ']'
+
+|rainbow_parenthesis#LoadBraces()|	      *rainbow_parenthesis#LoadBraces()*
+	Load syntax for curly brackets or braces '{' '}'
+
+|rainbow_parenthesis#LoadChevrons()|	    *rainbow_parenthesis#LoadChevrons()*
+	Load syntax for angle brackets or chevrons '<' '>'
+
+==============================================================================
+3. Options ~
+						   *rainbow-parenthesis-options*
+
+					       *g:rainbow_parenthesis_color_set*
+g:rainbow_parenthesis_color_set	enum ('krischik', 'slve' …)
+
+	Used to change the colour sets. The sets are named after the git
+	handle of the respective maintainer.
+
+	Available are: 'krischik', 'slve'
+
+	The default set is 'krischik'. The 'slve' set has a dark and light
+	variant.
+
+==============================================================================
+						 *rainbow_parenthesis-configure*
+4. Configuration~
+
+The best way to use rainbow_parenthesis is to add it to syntax plug-in of any
+file type used:
+>
+ >if exists("g:btm_rainbow_color") && g:btm_rainbow_color
+ >   call rainbow_parenthesis#LoadSquare ()
+ >   call rainbow_parenthesis#LoadRound ()
+ >   call rainbow_parenthesis#Activate ()
+ >endif
+
+This way you don't need to load all options available but only those which
+are of importance to the actual file types.
+
+==============================================================================
+vim:textwidth=78:tabstop=8:noexpandtab:filetype=help spell spelllang=en_gb
