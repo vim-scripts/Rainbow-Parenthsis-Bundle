@@ -1,0 +1,94 @@
+= Rainbow Parenthesis Bundle =
+
+This is a maintained mirror of http://www.vim.org/scripts/script.php?script_id=1561
+
+== Description ==
+
+This is a simple rainbow colour plug-in for those who want an simple light weight rainbow colour syntax plug-in that supports `(…)`, `[…]`, `{…}` and `<…>`.
+
+If you need something more powerful and configurable try [Rainbow Parentheses Improved](https://github.com/luochen1990).
+
+This is the original for http://www.vim.org/scripts/script.php?script_id=1561
+
+Based on the original rainbow_parenthesis from john gilmore but enhanced for gui mode.
+
+== Installation ==
+
+Install from https://github.com/krischik/vim-rainbow using dein (https://github.com/Shougo/dein.vim) or similar:
+
+{{code|lang=vim|
+call dein#begin('$HOME/vimfiles/bundles')
+call dein#add('krischik/vim-rainbow')
+call dein#end()
+call dein#install()
+}}
+
+== References ==
+
+{|
+|+ Rainbow Parenthesis Bundle
+|-
+| Vim-Script	|| https://www.vim.org/scripts/script.php?script_id=1561
+|-
+| Source	|| https://github.com/krischik/vim-rainbow
+|-
+| Wiki		|| https://github.com/krischik/vim-rainbow/wiki
+|-
+| Releases	|| https://github.com/krischik/vim-rainbow/releases
+|-
+| Issues	|| https://github.com/krischik/vim-rainbow/issues
+|-
+| Discussions	|| https://github.com/krischik/vim-rainbow/discussions
+|}
+
+== Comments ==
+
+=== slve improvements ===
+
+My technique only worked up to 16 level. Which is isn't any good for languages
+like lisp. slve fixed this with a recursive solution. Very need.
+
+==== before ====
+
+[[File:Pictures/before.png|1060px]]
+
+==== after ====
+
+===== dark =====
+
+[[File:Pictures/after.png|1060px]]
+
+===== light =====
+
+[[File::Pictures/slve.png|1060px]]
+
+=== autre improvements ===
+
+This fork provides for a small fix to the plugin. It also customises the parenthesis colours for a dark background.
+
+[[File:Pictures/autre.png|1060px]]
+
+=== charlietanksley improvements ===
+
+Fork of original. Forked primarily to remove the background colour on the syntax highlighting.
+
+[[File:Pictures/charlietanksley.png|1060px]]
+
+=== jwilkins improvements ===
+
+Remove the background color in terminal mode.
+
+[[File:Pictures/jwilkins.png|1060px]]
+
+=== krischik improvements ===
+
+* Fixed all the bugs and merged all the code.
+* Vim got a little stricter on syntax highlights and some of slve tricks didn't work any more. I also added an option to choose between my colour set and those of the other contributors.
+* Increased the levels before repeating back to 16. Slve repeated after 10.
+* Switched the background colours around for better contrast between level 15 and level 0.
+
+[[File:Pictures/fixed.png|1060px]]
+
+/* vim: set textwidth=0 wrap tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab : */
+/* vim: set filetype=mediawiki fileencoding=utf8 fileformat=unix foldmethod=marker : */
+/* vim: set nospell spelllang=en_gb : */
