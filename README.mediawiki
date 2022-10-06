@@ -16,12 +16,10 @@ Based on the original rainbow_parenthesis from john gilmore but enhanced for gui
 
 Install from https://github.com/krischik/vim-rainbow using dein (https://github.com/Shougo/dein.vim) or similar:
 
-{{code|lang=vim|
-call dein#begin('$HOME/vimfiles/bundles')
-call dein#add('krischik/vim-rainbow')
-call dein#end()
-call dein#install()
-}}
+    call dein#begin('$HOME/vimfiles/bundles')
+    call dein#add('krischik/vim-rainbow')
+    call dein#end()
+    call dein#install()
 
 == References ==
 
